@@ -48,7 +48,7 @@ export const SubAdminSidebar = ({ isOpen, setSidebarOpen, subAdmin }) => {
     logout();
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/subadmin/logout",
+        "https://borgavemilkdairybackend.onrender.com/api/v1/subadmin/logout",
         {},
         { withCredentials: true }
       );

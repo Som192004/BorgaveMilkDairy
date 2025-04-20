@@ -43,7 +43,7 @@ const LoanForm = ({
     const fetchFarmers = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/api/v1/farmer/get-all-farmers",
+          "https://borgavemilkdairybackend.onrender.com/api/v1/farmer/get-all-farmers",
           { withCredentials: true }
         );
         const fetchedFarmers = response.data.data || response.data;

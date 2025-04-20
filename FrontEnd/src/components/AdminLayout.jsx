@@ -13,7 +13,7 @@ export const AdminLayout = () => {
   const fetchAdmin = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/v1/admin/get-admin",
+        "https://borgavemilkdairybackend.onrender.com/api/v1/admin/get-admin",
         { withCredentials: true }
       );
       console.log(response);
