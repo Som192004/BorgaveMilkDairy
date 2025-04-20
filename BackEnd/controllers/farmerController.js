@@ -207,6 +207,7 @@ const exportFarmerDetail = async (req, res) => {
 import express from 'express';
 import PDFDocument from 'pdfkit';
 import fs from 'fs';
+import { start } from "repl";
 
 // Create the 'reports' directory if it doesn't exist
 const reportsDirectory = path.join(process.cwd(), 'reports');
@@ -217,8 +218,8 @@ if (!fs.existsSync(reportsDirectory)) {
 const farmerCombinedReport = async (req,res) => {
   try {
     
-    const { farmerId, day } = req.params;
-    
+    const { farmerId, day} = req.params;
+    console.log("day: " , day)
     const farmer = await Farmer.findOne({ farmerId , subAdmin:req.subAdmin});
     
     if (!farmer) {
@@ -456,6 +457,7 @@ const farmerCombinedReport = async (req,res) => {
 const allFarmersCombinedReport = async (req, res) => {
   try {
     const {day} = req.params;
+    console.log("day: " , day)
     const farmers = await Farmer.find({subAdmin : req.subAdmin});
 
     if (farmers.length === 0) {
