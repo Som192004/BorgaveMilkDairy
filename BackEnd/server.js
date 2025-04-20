@@ -101,7 +101,7 @@ const app = express();
 app.use(
   cors({
     // origin:process.env.CORS_ORIGIN,
-    origin: "http://localhost:5173",
+    origin: "https://bgmilkdairy.onrender.com",
     credentials: true,
   })
 );
@@ -147,7 +147,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173", // Adjust this to match your frontend
+    origin: "https://bgmilkdairy.onrender.com", // Adjust this to match your frontend
     methods: ["GET", "POST"],
   },
 });
