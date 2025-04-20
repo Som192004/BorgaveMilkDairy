@@ -31,7 +31,7 @@ export const EditImageSlider = () => {
       setError("");
       try {
         const { data } = await axios.get(
-          "http://localhost:8000/api/v1/new-offer/get-all-offers",
+          "https://borgavemilkdairybackend.onrender.com/api/v1/new-offer/get-all-offers",
           { withCredentials: true }
         );
         console.log("Fetched slides:", data);
@@ -117,7 +117,7 @@ export const EditImageSlider = () => {
         let response;
         if (isFileModified) {
           response = await axios.post(
-            `http://localhost:8000/api/v1/new-offer/edit-offer/${formData._id}`,
+            `https://borgavemilkdairybackend.onrender.com/api/v1/new-offer/edit-offer/${formData._id}`,
             formData,
             {
               withCredentials: true,
@@ -127,7 +127,7 @@ export const EditImageSlider = () => {
           console.log("Slide updated with new file:", response.data);
         } else {
           response = await axios.post(
-            `http://localhost:8000/api/v1/new-offer/edit-offer/${formData._id}`,
+            `https://borgavemilkdairybackend.onrender.com/api/v1/new-offer/edit-offer/${formData._id}`,
             { title: formData.title, description: formData.description },
             { withCredentials: true }
           );
@@ -143,7 +143,7 @@ export const EditImageSlider = () => {
       } else {
         // Create a new slide
         const response = await axios.post(
-          "http://localhost:8000/api/v1/new-offer/add-new-offer",
+          "https://borgavemilkdairybackend.onrender.com/api/v1/new-offer/add-new-offer",
           formData,
           {
             withCredentials: true,
@@ -172,7 +172,7 @@ export const EditImageSlider = () => {
   const handleDelete = async (_id) => {
     try {
       const response = await axios.post(
-        `http://localhost:8000/api/v1/new-offer/delete-offer/${_id}`,
+        `https://borgavemilkdairybackend.onrender.com/api/v1/new-offer/delete-offer/${_id}`,
         {},
         {
           withCredentials: true,

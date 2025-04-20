@@ -10,7 +10,7 @@ export const SubAdminReport = () => {
   const [loading, setLoading] = useState(false);
   const [activeTab, setActiveTab] = useState("farmersLoan");
   const [tmpData , setTmpDate] = useState(null);
-  const BASE_URL = "http://localhost:8000/api/v1";
+  const BASE_URL = "https://borgavemilkdairybackend.onrender.com/api/v1";
 
   // Function to handle start date selection and calculate end date
   const handleStartDateChange = (date) => {

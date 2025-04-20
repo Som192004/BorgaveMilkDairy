@@ -8,7 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 // Set your backend API base URL (adjust as needed)
-const API_URL = "http://localhost:8000/api/v1/category";
+const API_URL = "https://borgavemilkdairybackend.onrender.com/api/v1/category";
 
 export const SubAdminProductsList = () => {
   const [categories, setCategories] = useState([]);

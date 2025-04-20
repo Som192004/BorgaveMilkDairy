@@ -115,7 +115,7 @@ const OnlineOrders = () => {
   // Fetch orders from the backend
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/v1/online-order/get-all-orders" , {
+      .get("https://borgavemilkdairybackend.onrender.com/api/v1/online-order/get-all-orders" , {
         withCredentials : true
       }) // Adjust this API endpoint as needed
       .then((response) => {
@@ -132,7 +132,7 @@ const OnlineOrders = () => {
   const handleOrder = async (orderId) =>
   {
     axios
-      .get(`http://localhost:8000/api/v1/online-order/place-order/:${orderId}` , {
+      .get(`https://borgavemilkdairybackend.onrender.com/api/v1/online-order/place-order/:${orderId}` , {
         withCredentials : true
       }) // Adjust this API endpoint as needed
       .then((response) => {

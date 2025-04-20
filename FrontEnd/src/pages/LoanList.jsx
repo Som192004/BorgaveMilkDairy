@@ -19,7 +19,7 @@ const LoanList = () => {
   const fetchLoans = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/v1/loan/get-all-loans",
+        "https://borgavemilkdairybackend.onrender.com/api/v1/loan/get-all-loans",
         { withCredentials: true }
       );
       console.log(response);
@@ -63,7 +63,7 @@ const LoanList = () => {
       if (editingLoan) {
         // Update existing loan
         const response = await axios.put(
-          `http://localhost:8000/api/v1/loan/update/${editingLoan.id}`,
+          `https://borgavemilkdairybackend.onrender.com/api/v1/loan/update/${editingLoan.id}`,
           loan,
           { withCredentials: true }
         );
@@ -71,7 +71,7 @@ const LoanList = () => {
       } else {
         // Create new loan
         const response = await axios.post(
-          "http://localhost:8000/api/v1/loan/add-loan",
+          "https://borgavemilkdairybackend.onrender.com/api/v1/loan/add-loan",
           loan,
           { withCredentials: true }
         );
@@ -101,7 +101,7 @@ const LoanList = () => {
   const handleDeleteConfirmed = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:8000/api/v1/loan/delete/${id}`,
+        `https://borgavemilkdairybackend.onrender.com/api/v1/loan/delete/${id}`,
         { withCredentials: true }
       );
       console.log("Loan deleted:", response.data);
@@ -139,7 +139,7 @@ const LoanList = () => {
     }
     try {
       const response = await axios.post(
-        `http://localhost:8000/api/v1/loan/deduct/${loanToDeduct.id}`,
+        `https://borgavemilkdairybackend.onrender.com/api/v1/loan/deduct/${loanToDeduct.id}`,
         { loanAmount: amount },
         { withCredentials: true }
       );
