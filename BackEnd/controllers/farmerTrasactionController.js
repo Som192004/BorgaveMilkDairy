@@ -459,7 +459,7 @@ doc.font('Helvetica').text('Loan Remaining:', 300, currentY)
 export const downloadAllFarmersPDFByDate = async (req, res) => {
   try {
     const { start, end } = req.params;
-    const farmers = await Farmer.find();
+    const farmers = await Farmer.find({subAdmin : req.subAdmin._id});
 
     const startDate = new Date(start);
     const endDate = new Date(end);

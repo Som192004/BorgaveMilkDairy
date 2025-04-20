@@ -489,7 +489,7 @@ export const updateProductStock = async (req, res) => {
 
 export const getAllProducts = asyncHandler(async (req, res) => {
   try {
-    const categories = await Category.find();
+    const categories = await Category.find({subAdmin : req.subAdmin._id});
     const allProducts = categories.reduce((acc, category) => {
       if (category.products && category.products.length > 0) {
         return acc.concat(category.products);
