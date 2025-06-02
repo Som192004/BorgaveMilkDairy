@@ -125,7 +125,7 @@ export const BranchList = () => {
   // Save branch (create or update)
   const handleSaveBranch = async () => {
     if (!formData.branchId || !formData.address || !formData.villageCity) {
-      alert("All Fields are required!"));
+      alert("All Fields are required!");
       return;
     }
 
