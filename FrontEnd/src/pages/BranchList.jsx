@@ -173,6 +173,7 @@ export const BranchList = () => {
       setIsEditing(false);
       setEditId(null);
       setFormData({ branchId: "", address: "", villageCity: "" });
+      setError("");
     } catch (err) {
       console.error("Error saving branch:", err);
       setError("Failed to save branch.");
