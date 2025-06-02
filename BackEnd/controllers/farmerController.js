@@ -52,7 +52,6 @@ const addFarmer = asyncHandler(async (req, res) => {
     farmerName: farmerName,
     mobileNumber: mobileNumber,
     address: address,
-    milkType: milkType,
     gender: gender,
     joiningDate: new Date(joiningDate), // Adjust formatting as needed
     subAdmin,
