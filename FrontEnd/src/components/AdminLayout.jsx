@@ -88,7 +88,7 @@ export const AdminLayout = () => {
         {/* Sticky Header */}
         <header className="sticky top-0 z-30 flex items-center justify-between bg-white px-6 py-4 border-b border-gray-200 shadow-sm">
           {/* <h1 className="text-2xl font-semibold text-gray-800">Dashboard</h1> */}
-          {admin && (
+          {/* {admin && (
             <div className="flex items-center space-x-3">
               <span className="text-gray-600">Welcome, {admin.adminName}</span>
               {admin.avatarUrl ? (
@@ -102,8 +102,8 @@ export const AdminLayout = () => {
                   {admin.adminName?.charAt(0)}
                 </div>
               )}
-            </div>
-          )}
+            </div> */}
+          {/* )} */}
         </header>
 
         {/* Main Content */}
