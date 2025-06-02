@@ -179,7 +179,7 @@ export const SubAdminList = () => {
         setErrors([error.response.data.error]);
       } else if (error.code === "ERR_NETWORK") {
         setErrors([
-          "Network error. Please check your connection and try again.",
+          "Network error or Internal Server Error. Please check your connection and try again.",
         ]);
       } else {
         setErrors(["An unexpected error occurred. Please try again."]);

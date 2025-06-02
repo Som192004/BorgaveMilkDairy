@@ -220,7 +220,7 @@ export const AdminReport = () => {
       </motion.h1>
 
       {branchList?.length === 0 ? (
-        <p className="text-gray-700 text-center mt-6">{t("report.loadingBranches")}</p>
+        <p className="text-gray-700 text-center mt-6">{("Loading Reports")}</p>
       ) : (
         <div className="space-y-6">
           <div className="space-y-4">

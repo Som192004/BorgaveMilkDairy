@@ -395,7 +395,7 @@ export const ContactUs = () => {
         .catch((error) => {
           console.error("Error:", error);
           setErrorMessage(
-            t("contactUs.alert.smsError") || "Failed to send OTP. Please try again."
+            "Failed to send OTP. Please try again."
           );
         })
         .finally(() => {
@@ -403,7 +403,7 @@ export const ContactUs = () => {
         });
     } else {
       setErrorMessage(
-        t("contactUs.alert.invalidMobile") || "Invalid mobile number"
+        "Invalid mobile number"
       );
     }
   };
@@ -449,7 +449,7 @@ export const ContactUs = () => {
             console.log("Order Created:", orderResponse.data);
             
             setConfirmationMessage(
-              t("contactUs.confirmation") || "Your order has been placed successfully!"
+              "Your order has been placed successfully!"
             );
   
             // Clear cart after successful order
@@ -469,7 +469,7 @@ export const ContactUs = () => {
       .catch((error) => {
         console.error("Error:", error);
         setErrorMessage(
-          t("contactUs.alert.invalidOtp") || "The OTP you entered is invalid. Please try again."
+          "The OTP you entered is invalid. Please try again."
         );
       });
   

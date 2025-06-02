@@ -115,7 +115,7 @@ export const BranchList = () => {
       );
     } catch (err) {
       console.error("Error deleting branch:", err);
-      setError(t("branch.alerts.deleteError") || "Failed to delete branch.");
+      setError("Failed to delete branch.");
     } finally {
       setShowConfirm(false);
       setDeleteId(null);
@@ -125,7 +125,7 @@ export const BranchList = () => {
   // Save branch (create or update)
   const handleSaveBranch = async () => {
     if (!formData.branchId || !formData.address || !formData.villageCity) {
-      alert(t("branch.alerts.fillAllFields"));
+      alert("All Fields are required!"));
       return;
     }
 
@@ -175,7 +175,7 @@ export const BranchList = () => {
       setFormData({ branchId: "", address: "", villageCity: "" });
     } catch (err) {
       console.error("Error saving branch:", err);
-      setError(t("branch.alerts.saveError") || "Failed to save branch.");
+      setError("Failed to save branch.");
     }
   };
 
@@ -199,7 +199,7 @@ export const BranchList = () => {
         </div>
       ) : branches.length === 0 ? (
         <p className="text-center text-gray-700">
-          {t("branch.alerts.noBranches") || "No branches available."}
+          {"No branches available."}
         </p>
       ) : (
         <motion.div

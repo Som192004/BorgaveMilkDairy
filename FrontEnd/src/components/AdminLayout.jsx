@@ -87,7 +87,7 @@ export const AdminLayout = () => {
       <div className="flex flex-col flex-1 overflow-hidden">
         {/* Sticky Header */}
         <header className="sticky top-0 z-30 flex items-center justify-between bg-white px-6 py-4 border-b border-gray-200 shadow-sm">
-          <h1 className="text-2xl font-semibold text-gray-800">Dashboard</h1>
+          {/* <h1 className="text-2xl font-semibold text-gray-800">Dashboard</h1> */}
           {admin && (
             <div className="flex items-center space-x-3">
               <span className="text-gray-600">Welcome, {admin.adminName}</span>
