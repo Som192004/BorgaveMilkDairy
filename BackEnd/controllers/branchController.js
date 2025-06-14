@@ -1,7 +1,8 @@
 import { Branch } from "../model/Branch.js";
 import { SubAdmin } from "../model/SubAdmin.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
-
+import { Category } from "../model/Category.js";
+import {onlineOrder} from "../model/OnlineOrder.js";
 //!This is done
 const createBranch = async (req, res) => {
   const { branchId, branchAddress, location } = req.body;
@@ -92,8 +93,12 @@ const deleteBranchById = async (req, res) => {
       );
   }
 
+  await Category.deleteMany({ branchId: branchId });
+
+  await onlineOrder.deleteMany({branchId : branchId});
   // No sub-admin references; safe to delete
   const deletedBranch = await Branch.findOneAndDelete({ branchId });
+
   return res
     .status(200)
     .send(new ApiResponse(200, deletedBranch, "Branch deleted successfully"));

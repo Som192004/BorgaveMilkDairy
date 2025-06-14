@@ -74,5 +74,4 @@ const categorySchema = new mongoose.Schema(
 
 categorySchema.index({ branchId: 1, categoryName: 1 }, { unique: true });
 
-// Export the Category model
 export const Category = mongoose.model("Category", categorySchema);
