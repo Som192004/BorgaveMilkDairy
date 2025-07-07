@@ -395,7 +395,7 @@ export const ContactUs = () => {
         .catch((error) => {
           console.error("Error:", error);
           setErrorMessage(
-            "Failed to send OTP. Please try again."
+            "Note: This website uses Twilio's free trial. OTP messages can be sent only to verified phone numbers for now."
           );
         })
         .finally(() => {
