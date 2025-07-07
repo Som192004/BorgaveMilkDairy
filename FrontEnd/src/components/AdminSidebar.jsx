@@ -8,7 +8,6 @@ import { useAuth } from "../context/AuthContext";
 import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { useAuth } from "../context/AuthContext";
 export const AdminSidebar = ({ isOpen, setSidebarOpen, admin }) => {
   const location = useLocation();
   const navigate = useNavigate();
