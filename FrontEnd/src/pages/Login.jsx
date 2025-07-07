@@ -71,7 +71,7 @@ export const Login = () => {
       localStorage.setItem("response", JSON.stringify(response))
       console.log(response.data.data.accessToken)
       localStorage.setItem("accessToken", (response.data.data.accessToken));
-      login(role, response.data.data.accessToke);
+      login(role, response.data.data.accessToken);
       // Redirect based on role
       if (role === "Admin") {
         navigate("/admin");
