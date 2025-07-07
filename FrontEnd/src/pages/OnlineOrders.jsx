@@ -156,6 +156,7 @@ const OnlineOrders = () => {
       })
       .catch((error) => {
         console.error("Error fetching orders:", error);
+        console.log("accessToken", accessToken)
         setError("Failed to load orders. Please try again later.");
         setLoading(false);
       });
