@@ -136,6 +136,7 @@ const OnlineOrders = () => {
 
   const handleOrder = async (orderId) =>
   {
+    console.log("accessToken", accessToken)
     axios
       .put(`https://borgavemilkdairybackend.onrender.com/api/v1/online-order/place-order/${orderId}` , {
         withCredentials : true ,
