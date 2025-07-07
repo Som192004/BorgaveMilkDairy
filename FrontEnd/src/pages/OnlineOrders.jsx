@@ -132,7 +132,7 @@ const OnlineOrders = () => {
   const handleOrder = async (orderId) =>
   {
     axios
-      .get(`https://borgavemilkdairybackend.onrender.com/api/v1/online-order/place-order/:${orderId}` , {
+      .put(`https://borgavemilkdairybackend.onrender.com/api/v1/online-order/place-order/${orderId}` , {
         withCredentials : true
       }) // Adjust this API endpoint as needed
       .then((response) => {
