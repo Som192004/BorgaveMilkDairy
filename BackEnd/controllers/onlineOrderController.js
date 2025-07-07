@@ -90,6 +90,8 @@ export const placeOrder = async (req,res) => {
             {isPlaced : true},
             { new: true }
         );
+        console.log(req.params.id);
+        console.log(updatedOrder);
         if (!updatedOrder) {
             return res.status(404).json({ message: "Order not found" });
         }
