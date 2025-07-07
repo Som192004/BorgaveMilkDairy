@@ -627,7 +627,7 @@ export const ContactUs = () => {
             </p>
           </div>
 
-          <div className="w-full sm:max-w-xl">
+{/*           <div className="w-full sm:max-w-xl">
             <h3 className="text-xl font-semibold text-blue-700 mb-4">
               {t("contactUs.info.shopLocationsTitle")}
             </h3>
@@ -640,7 +640,7 @@ export const ContactUs = () => {
               style={{ border: 0 }}
               allowFullScreen
             ></iframe>
-          </div>
+          </div> */}
         </div>
       </motion.div>
     </motion.div>
