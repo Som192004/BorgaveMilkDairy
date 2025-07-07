@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import MilkForm from "../components/MilkForm.jsx";
 import { motion, AnimatePresence } from "framer-motion";
+import { useAuth } from "../context/AuthContext" ;
 
 const MilkList = () => {
   const [milkEntries, setMilkEntries] = useState([]); // Array of farmer documents (each contains transactions)
@@ -12,7 +13,8 @@ const MilkList = () => {
   const [loadingMilk, setLoadingMilk] = useState(false);
   const [loadingFarmers, setLoadingFarmers] = useState(false);
   const [selectedDate, setSelectedDate] = useState(""); // In YYYY-MM-DD format
-
+  const { accessToken } = useAuth();
+  
   // New state for custom delete confirmation modal
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [entryToDelete, setEntryToDelete] = useState(null);
@@ -23,7 +25,9 @@ const MilkList = () => {
     try {
       const response = await axios.get(
         "https://borgavemilkdairybackend.onrender.com/api/v1/milk/get-all-milk",
-        { withCredentials: true }
+        { withCredentials: true , headers : {
+          authorization: `Bearer ${accessToken}`
+        }}
       );
       // Expected response: array of farmer objects with fields: farmerName, mobileNumber, transaction (array)
       const fetchedEntries = response.data.data || response.data;
@@ -44,7 +48,9 @@ const MilkList = () => {
     try {
       const response = await axios.get(
         "https://borgavemilkdairybackend.onrender.com/api/v1/farmer/get-all-farmers",
-        { withCredentials: true }
+        { withCredentials: true , headers : {
+          authorization: `Bearer ${accessToken}`
+        }}
       );
       const fetchedFarmers = response.data.data || response.data;
       setFarmers(fetchedFarmers);
@@ -77,7 +83,9 @@ const MilkList = () => {
         const response = await axios.patch(
           `https://borgavemilkdairybackend.onrender.com/api/v1/milk/update-milk/${editingEntry.farmerId}/${editingEntry._id}`,
           entry,
-          { withCredentials: true }
+          { withCredentials: true , headers : {
+            authorization: `Bearer ${accessToken}`
+          }}
         );
         console.log("Update response:", response);
         // The response returns an updated farmer document.
@@ -97,7 +105,9 @@ const MilkList = () => {
         const response = await axios.post(
           "https://borgavemilkdairybackend.onrender.com/api/v1/milk/add-milk",
           entry,
-          { withCredentials: true }
+          { withCredentials: true , headers : {
+            authorization: `Bearer ${accessToken}`
+          } }
         );
         console.log("Add response:", response.data.data);
         const updatedFarmer = response.data.data;
@@ -143,7 +153,9 @@ const MilkList = () => {
     try {
       await axios.delete(
         `https://borgavemilkdairybackend.onrender.com/api/v1/milk/delete-milk/${farmerId}/${transactionId}`,
-        { withCredentials: true }
+        { withCredentials: true , headers : {
+          authorization: `Bearer ${accessToken}`
+        }}
       );
       // Update local state: remove the transaction from the corresponding farmer
       setMilkEntries((prevEntries) =>

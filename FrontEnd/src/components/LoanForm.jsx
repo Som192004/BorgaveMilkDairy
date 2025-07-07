@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
-
+import { useAuth } from "../context/AuthContext";
 const LoanForm = ({
   setIsFormOpen,
   handleSaveLoan,
@@ -15,7 +15,7 @@ const LoanForm = ({
     loanAmount: "",
     loanDate: new Date().toISOString().split("T")[0],
   };
-
+  const { accessToken } = useAuth();
   const [formData, setFormData] = useState(initialFormData);
   const [errors, setErrors] = useState({});
   const [farmers, setFarmers] = useState([]);
@@ -44,7 +44,9 @@ const LoanForm = ({
       try {
         const response = await axios.get(
           "https://borgavemilkdairybackend.onrender.com/api/v1/farmer/get-all-farmers",
-          { withCredentials: true }
+          { withCredentials: true, headers : {
+            authorization: `Bearer ${accessToken}`
+          } }
         );
         const fetchedFarmers = response.data.data || response.data;
         setFarmers(fetchedFarmers);

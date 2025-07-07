@@ -4,12 +4,12 @@ import { SubAdminSidebar } from "./SubAdminSidebar";
 import { Menu } from "lucide-react"; // For the hamburger icon
 import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
-
+import { useAuth } from "../context/AuthContext";
 export const SubAdminLayout = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [subAdmin, setSubAdmin] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-
+  const { accessToken } = useAuth();
   // Safely retrieve sub-admin info from localStorage
   const responseByLS = JSON.parse(localStorage.getItem("response") || "{}");
 
@@ -24,7 +24,9 @@ export const SubAdminLayout = () => {
     try {
       const response = await axios.get(
         `https://borgavemilkdairybackend.onrender.com/api/v1/subadmin/get/${subAdminId}`,
-        { withCredentials: true }
+        { withCredentials: true , headers : {
+          authorization: `Bearer ${accessToken}`
+        }}
       );
       setSubAdmin(response.data.data);
     } catch (error) {

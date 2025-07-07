@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import DatePicker from "react-datepicker"; // Importing a date picker library
 import "react-datepicker/dist/react-datepicker.css"; // Importing styles for the date picker
-
+import { useAuth } from "../context/AuthContext";
 export const SubAdminReport = () => {
   const [startDate, setStartDate] = useState(null); // State for start date
   const [endDate, setEndDate] = useState(null); // State for end date
@@ -11,7 +11,7 @@ export const SubAdminReport = () => {
   const [activeTab, setActiveTab] = useState("farmersLoan");
   const [tmpData , setTmpDate] = useState(null);
   const BASE_URL = "https://borgavemilkdairybackend.onrender.com/api/v1";
-
+  const { accessToken } = useAuth();
   // Function to handle start date selection and calculate end date
   const handleStartDateChange = (date) => {
     setStartDate(date);
@@ -35,6 +35,9 @@ export const SubAdminReport = () => {
       const response = await axios.get(`${BASE_URL}${url}`, {
         responseType: "blob",
         withCredentials: true,
+        headers : {
+          authorization: `Bearer ${accessToken}`
+        }
       });
 
       const blob = new Blob([response.data]);

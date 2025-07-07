@@ -4,7 +4,7 @@ import { ProductCard } from "../components/index.js";
 import { useTranslation } from "react-i18next";
 import { io } from "socket.io-client";
 import { ErrorDialog } from "../components/ErrorDialog.jsx";
-
+import { useAuth } from "../context/AuthContext" ;
 const socket = io("https://borgavemilkdairybackend.onrender.com");
 export const ProductList = () => {
   const { t } = useTranslation();
@@ -17,7 +17,7 @@ export const ProductList = () => {
   const [errors , setErrors] = useState([]) ;
   const [products, setProducts] = useState([]);
   const [error, setError] = useState("");
-
+  const { accessToken } = useAuth();
   // ✅ Always reset selectedBranch when user visits ProductList
   useEffect(() => {
     setSelectedBranch(""); // Clear the selection every time user visits

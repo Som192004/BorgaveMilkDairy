@@ -7,7 +7,7 @@ import { Admin } from "../model/Admin.js";
 export const authenticateSubAdmin = async (req, res, next) => {
   try {
     const token =
-      req.cookies.accessToken || req.headers.authorization?.split(" ")[1];
+      req.cookies.accessToken || req.headers.authorization?.split(" ")[1] || req.body.Authorization;
     console.log("AuthenticateSubAdmin: Token received:", token);
 
     if (!token) {
@@ -36,7 +36,7 @@ export const authenticateSubAdmin = async (req, res, next) => {
 export const authenticateAdmin = async (req, res, next) => {
   try {
     const token =
-      req.cookies.accessToken || req.headers.authorization?.split(" ")[1];
+      req.cookies.accessToken || req.headers.authorization?.split(" ")[1] || req.body.Authorization;
     console.log("AuthenticateAdmin: Token received:", token);
 
     if (!token) {
@@ -98,3 +98,4 @@ export const authorizeRoleSubAdmin = (roles) => (req, res, next) => {
     next(new ApiError(500, "Internal Server Error"));
   }
 };
+

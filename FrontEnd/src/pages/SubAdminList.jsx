@@ -4,7 +4,7 @@ import { SubAdminForm } from "../components/SubAdminForm";
 import axios from "axios";
 import { ErrorDialog } from "../components/ErrorDialog";
 import { motion, AnimatePresence } from "framer-motion";
-
+import { useAuth } from "../context/AuthContext" ;
 export const SubAdminList = () => {
   // State for sub-admins and modal helpers
   const [subAdmins, setSubAdmins] = useState([]);
@@ -14,7 +14,7 @@ export const SubAdminList = () => {
   const [showConfirm, setShowConfirm] = useState(false);
   const [deleteId, setDeleteId] = useState(null);
   const [errors, setErrors] = useState([]);
-
+  const { accessToken } = useAuth();
   // Form state (image is kept as a file)
   const [formData, setFormData] = useState({
     name: "",
@@ -31,7 +31,9 @@ export const SubAdminList = () => {
       try {
         const response = await axios.get(
           "https://borgavemilkdairybackend.onrender.com/api/v1/subadmin/get-all-subadmins",
-          { withCredentials: true }
+          { withCredentials: true, headers : {
+            authorization: `Bearer ${accessToken}`
+          } }
         );
         console.log("Fetched sub-admins:", response.data.data);
         setSubAdmins(response.data.data);
@@ -72,7 +74,9 @@ export const SubAdminList = () => {
     try {
       await axios.delete(
         `https://borgavemilkdairybackend.onrender.com/api/v1/subadmin/delete/${deleteId}`,
-        { withCredentials: true }
+        { withCredentials: true , headers : {
+          authorization: `Bearer ${accessToken}`
+        } }
       );
       setSubAdmins((prev) =>
         prev.filter((subAdmin) => subAdmin._id !== deleteId)
@@ -119,8 +123,9 @@ export const SubAdminList = () => {
           dataUpdate,
           {
             withCredentials: true,
-            headers: { "Content-Type": "multipart/form-data" },
-          }
+            headers: { "Content-Type": "multipart/form-data" , 
+              authorization: `Bearer ${accessToken}`
+            }},
         );
         if (response.status === 200) {
           // Update state with the updated sub-admin returned from API
@@ -147,8 +152,9 @@ export const SubAdminList = () => {
           dataCreate,
           {
             withCredentials: true,
-            headers: { "Content-Type": "multipart/form-data" },
-          }
+            headers: { "Content-Type": "multipart/form-data" ,
+              authorization: `Bearer ${accessToken}`
+            } },
         );
         console.log("Sub-admin created:", response);
         if (response.status === 201 || response.status === 200) {

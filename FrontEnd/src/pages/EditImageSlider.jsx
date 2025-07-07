@@ -4,7 +4,7 @@ import { SlideForm } from "../components/SlideForm";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
-
+import { useAuth } from "../context/AuthContext" ;
 export const EditImageSlider = () => {
   const { t } = useTranslation();
 
@@ -23,7 +23,7 @@ export const EditImageSlider = () => {
   const [error, setError] = useState("");
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [slideToDelete, setSlideToDelete] = useState(null);
-
+  const { accessToken } = useAuth();
   // Fetch slides from backend on mount
   useEffect(() => {
     const fetchSlides = async () => {
@@ -32,7 +32,9 @@ export const EditImageSlider = () => {
       try {
         const { data } = await axios.get(
           "https://borgavemilkdairybackend.onrender.com/api/v1/new-offer/get-all-offers",
-          { withCredentials: true }
+          { withCredentials: true, headers: {
+            authorization: `Bearer ${accessToken}`,
+          } }
         );
         console.log("Fetched slides:", data);
         let filteredSlides = [];
@@ -121,7 +123,7 @@ export const EditImageSlider = () => {
             formData,
             {
               withCredentials: true,
-              headers: { "Content-Type": "multipart/form-data" },
+              headers: { "Content-Type": "multipart/form-data" , authorization: `Bearer ${accessToken}`},
             }
           );
           console.log("Slide updated with new file:", response.data);
@@ -129,7 +131,9 @@ export const EditImageSlider = () => {
           response = await axios.post(
             `https://borgavemilkdairybackend.onrender.com/api/v1/new-offer/edit-offer/${formData._id}`,
             { title: formData.title, description: formData.description },
-            { withCredentials: true }
+            { withCredentials: true , headers : {
+              authorization: `Bearer ${accessToken}`
+            }}
           );
           console.log("Slide updated without new file:", response.data);
         }
@@ -147,8 +151,9 @@ export const EditImageSlider = () => {
           formData,
           {
             withCredentials: true,
-            headers: { "Content-Type": "multipart/form-data" },
-          }
+            headers: { "Content-Type": "multipart/form-data" ,
+              authorization: `Bearer ${accessToken}`
+            }}
         );
         console.log("New slide created:", response.data);
         const newSlide = {
@@ -176,8 +181,9 @@ export const EditImageSlider = () => {
         {},
         {
           withCredentials: true,
-          headers: { "Content-Type": "multipart/form-data" },
-        }
+          headers: { "Content-Type": "multipart/form-data",
+            authorization: `Bearer ${accessToken}`
+          } },
       );
       console.log("Slide deleted:", response.data);
       setSlides((prevSlides) =>

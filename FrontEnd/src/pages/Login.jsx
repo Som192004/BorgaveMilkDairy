@@ -8,12 +8,13 @@ import axios from "axios";
 export const Login = () => {
   const { t } = useTranslation();
   const [role, setRole] = useState("");
+  const [accessToken, setAccessToken] = useState("");
   const [mobile, setMobile] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
-  const { role: savedRole, login } = useAuth();
+  const { role: savedRole, accessToken: savedaccessToken, login } = useAuth();
 
   useEffect(() => {
     if (savedRole === "Admin") {
@@ -59,7 +60,7 @@ export const Login = () => {
       //   { withCredentials: true }
       // );
       console.log(response);
-
+      
       if (response.status === 404) {
         setError("Invalid Credentials");
       }
@@ -68,7 +69,8 @@ export const Login = () => {
       }
       console.log("Login successful:", response);
       localStorage.setItem("response", JSON.stringify(response))
-      login(role);
+      localStorage.setItem("accessToken", response.data.data.accessToken);
+      login(role, response.data.data.accessToke);
       // Redirect based on role
       if (role === "Admin") {
         navigate("/admin");

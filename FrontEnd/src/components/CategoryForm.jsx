@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
-
+import { useAuth } from "../context/AuthContext";
 export const CategoryForm = ({ onClose, onSuccess, editingCategory }) => {
   // Prefill fields if editingCategory is provided
   const [categoryName, setCategoryName] = useState(
@@ -12,7 +12,7 @@ export const CategoryForm = ({ onClose, onSuccess, editingCategory }) => {
   );
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+  const { accessToken } = useAuth();
   // Update form fields when editingCategory changes
   useEffect(() => {
     if (editingCategory) {
@@ -45,7 +45,9 @@ export const CategoryForm = ({ onClose, onSuccess, editingCategory }) => {
             categoryName: categoryName.trim(),
             categoryDescription: description.trim(),
           },
-          { withCredentials: true }
+          { withCredentials: true , headers : {
+            authorization: `Bearer ${accessToken}`
+          }}
         );
       } else {
         // Create category API call: POST /api/v1/category/create-category
@@ -55,7 +57,9 @@ export const CategoryForm = ({ onClose, onSuccess, editingCategory }) => {
             categoryName: categoryName.trim(),
             categoryDescription: description.trim(),
           },
-          { withCredentials: true }
+          { withCredentials: true , headers : {
+            authorization: `Bearer ${accessToken}`
+          }}
         );
       }
       // On success, pass the new/updated category to the parent component

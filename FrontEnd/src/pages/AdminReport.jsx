@@ -171,12 +171,13 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import axios from "axios"; // Import Axios
+import { useAuth } from "../context/AuthContext" ;
 
 export const AdminReport = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { t } = useTranslation();
-
+  const { accessToken } = useAuth();
   const [branchList, setBranchList] = useState([]); 
   const [reportData, setReportData] = useState(null);
   const [hoveredBranch, setHoveredBranch] = useState(null);

@@ -7,14 +7,14 @@ import { LanguageToggler } from "./LanguageToggler";
 import { useAuth } from "../context/AuthContext.jsx";
 import axios from "axios";
 import { motion } from "framer-motion";
-
+import { useAuth } from "../context/AuthContext.jsx";
 export const SubAdminSidebar = ({ isOpen, setSidebarOpen, subAdmin }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const { logout } = useAuth();
   const [showReports, setShowReports] = useState(false);
   const { t } = useTranslation();
-
+  const { accessToken } = useAuth();
   useEffect(() => {
     if (!location.pathname.includes("/reports")) {
       setShowReports(false);
@@ -50,7 +50,9 @@ export const SubAdminSidebar = ({ isOpen, setSidebarOpen, subAdmin }) => {
       const response = await axios.post(
         "https://borgavemilkdairybackend.onrender.com/api/v1/subadmin/logout",
         {},
-        { withCredentials: true }
+        { withCredentials: true, headers : {
+          authorization: `Bearer ${accessToken}`
+        } }
       );
       if (response.status === 200) {
         navigate("/login");

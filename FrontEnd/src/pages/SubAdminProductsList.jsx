@@ -6,7 +6,7 @@ import { AddProductCard } from "../components/AddProductCard";
 import { AddProductForm } from "../components/AddProductForm";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import { useAuth } from "../context/AuthContext";
 // Set your backend API base URL (adjust as needed)
 const API_URL = "https://borgavemilkdairybackend.onrender.com/api/v1/category";
 
@@ -15,7 +15,7 @@ export const SubAdminProductsList = () => {
   const [products, setProducts] = useState([]); // flattened list of products
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-
+  const { accessToken } = useAuth();
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [editingProduct, setEditingProduct] = useState(null); // product object (with category info)
@@ -28,6 +28,9 @@ export const SubAdminProductsList = () => {
     try {
       const response = await axios.get(`${API_URL}/get-all-categories`, {
         withCredentials: true,
+        headers : {
+          authorization: `Bearer ${accessToken}`
+        }
       });
       console.log(response);
 
@@ -85,7 +88,9 @@ export const SubAdminProductsList = () => {
       const operation = delta > 0 ? "add" : "subtract";
       const value = Math.abs(delta);
       const url = `${API_URL}/${product.categoryId}/product/update-stock/${product._id}`;
-      await axios.patch(url, { operation, value }, { withCredentials: true });
+      await axios.patch(url, { operation, value }, { withCredentials: true , headers : {
+        authorization: `Bearer ${accessToken}`
+      } });
       toast.success("Stock updated successfully");
       fetchCategories();
     } catch (err) {
@@ -101,15 +106,19 @@ export const SubAdminProductsList = () => {
         const url = `${API_URL}/${editingProduct.categoryId}/product/update/${editingProduct._id}`;
         await axios.patch(url, productData, {
           withCredentials: true,
-          headers: { "Content-Type": "multipart/form-data" },
+          headers: { "Content-Type": "multipart/form-data" , 
+            authorization: `Bearer ${accessToken}`
+          },
         });
         toast.success("Product updated successfully");
       } else {
         const url = `${API_URL}/${categoryId}/product/add`;
         await axios.post(url, productData, {
           withCredentials: true,
-          headers: { "Content-Type": "multipart/form-data" },
-        });
+          headers: { "Content-Type": "multipart/form-data" , 
+            authorization: `Bearer ${accessToken}`
+          }},
+        );
         toast.success("Product added successfully");
       }
       setIsFormOpen(false);
@@ -127,7 +136,9 @@ export const SubAdminProductsList = () => {
     if (deleteTarget) {
       try {
         const url = `${API_URL}/${deleteTarget.categoryId}/product/delete/${deleteTarget._id}`;
-        await axios.delete(url, { withCredentials: true });
+        await axios.delete(url, { withCredentials: true , headers : {
+          authorization: `Bearer ${accessToken}`
+        } });
         toast.success("Product deleted successfully");
         setShowConfirm(false);
         setDeleteTarget(null);

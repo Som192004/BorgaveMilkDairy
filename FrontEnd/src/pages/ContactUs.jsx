@@ -309,7 +309,7 @@ import inquiryImage from "../assets/Borgave_Logo.jpg";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import { CartContext } from "../context/CartContext";
-
+import { useAuth } from "../context/AuthContext" ;
 
 export const ContactUs = () => {
   const { t } = useTranslation();
@@ -329,7 +329,7 @@ export const ContactUs = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [timer, setTimer] = useState(0);
   const [branches , setAllBranches] = useState([]);
-  
+  const { accessToken } = useAuth();
 
   // Handle input change
   const handleInputChange = (e) => {
@@ -360,8 +360,10 @@ export const ContactUs = () => {
     try
     {
       const response = await axios.get(
-        "https://borgavemilkdairybackend.onrender.com/api/v1/branch//get-branches-for-customer",
-        { withCredentials: true }
+        "https://borgavemilkdairybackend.onrender.com/api/v1/branch/get-branches-for-customer",
+        { withCredentials: true , headers: {
+          authorization: `Bearer ${accessToken}`,
+        }}
       );
       console.log("Branches fetched:", response.data.data);
 
@@ -444,7 +446,9 @@ export const ContactUs = () => {
   
         // Place order
         axios
-          .post("https://borgavemilkdairybackend.onrender.com/api/v1/online-order/create-order", {orderData}, { withCredentials: true })
+          .post("https://borgavemilkdairybackend.onrender.com/api/v1/online-order/create-order", {orderData}, { withCredentials: true , headers: {
+            authorization: `Bearer ${accessToken}`,
+          }})
           .then((orderResponse) => {
             console.log("Order Created:", orderResponse.data);
             

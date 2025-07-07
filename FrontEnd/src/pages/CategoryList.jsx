@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { CategoryForm } from "../components/CategoryForm"; // Adjust path as needed
 import { motion, AnimatePresence } from "framer-motion";
-
+import { useAuth } from "../context/AuthContext" ;
 export const CategoryList = () => {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -11,7 +11,7 @@ export const CategoryList = () => {
   const [editingCategory, setEditingCategory] = useState(null);
   // New state to track the category whose details should be shown
   const [detailCategory, setDetailCategory] = useState(null);
-
+  const { accessToken } = useAuth();
   // Fetch all categories from the backend API
   const fetchCategories = async () => {
     setLoading(true);
@@ -19,7 +19,11 @@ export const CategoryList = () => {
     try {
       const response = await axios.get(
         "https://borgavemilkdairybackend.onrender.com/api/v1/category/get-all-categories",
-        { withCredentials: true }
+        { withCredentials: true ,
+          headers: {
+            authorization: `Bearer ${accessToken}`,
+          } 
+         }
       );
       // Assume API returns an object with a data property that is an array of categories
       setCategories(response.data.data);
@@ -58,7 +62,10 @@ export const CategoryList = () => {
     try {
       await axios.delete(
         `https://borgavemilkdairybackend.onrender.com/api/v1/category/delete-category/${id}`,
-        { withCredentials: true }
+        { withCredentials: true , 
+          headers: {
+            authorization: `Bearer ${accessToken}`,
+          }}
       );
       // Re-fetch categories to update state
       fetchCategories();

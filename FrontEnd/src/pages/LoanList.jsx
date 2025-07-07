@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import LoanForm from "../components/LoanForm.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
+import { useAuth } from "../context/AuthContext" ;
 
 const LoanList = () => {
   const [loans, setLoans] = useState([]);
@@ -14,13 +15,15 @@ const LoanList = () => {
   const [isDeductModalOpen, setIsDeductModalOpen] = useState(false);
   const [loanToDeduct, setLoanToDeduct] = useState(null);
   const [deductAmount, setDeductAmount] = useState("");
-
+  const { accessToken } = useAuth();
   // Fetch loans from the backend and flatten the embedded loan arrays
   const fetchLoans = async () => {
     try {
       const response = await axios.get(
         "https://borgavemilkdairybackend.onrender.com/api/v1/loan/get-all-loans",
-        { withCredentials: true }
+        { withCredentials: true, headers : {
+          authorization: `Bearer ${accessToken}`
+        } }
       );
       console.log(response);
 
@@ -65,7 +68,9 @@ const LoanList = () => {
         const response = await axios.put(
           `https://borgavemilkdairybackend.onrender.com/api/v1/loan/update/${editingLoan.id}`,
           loan,
-          { withCredentials: true }
+          { withCredentials: true , headers : {
+            authorization: `Bearer ${accessToken}`
+          }}
         );
         console.log("Loan updated:", response.data);
       } else {
@@ -73,7 +78,9 @@ const LoanList = () => {
         const response = await axios.post(
           "https://borgavemilkdairybackend.onrender.com/api/v1/loan/add-loan",
           loan,
-          { withCredentials: true }
+          { withCredentials: true , headers : {
+            authorization: `Bearer ${accessToken}`
+          }}
         );
         console.log("Loan created:", response.data);
       }
@@ -102,7 +109,9 @@ const LoanList = () => {
     try {
       const response = await axios.delete(
         `https://borgavemilkdairybackend.onrender.com/api/v1/loan/delete/${id}`,
-        { withCredentials: true }
+        { withCredentials: true , headers : {
+          authorization: `Bearer ${accessToken}`
+        }}
       );
       console.log("Loan deleted:", response.data);
       setIsDeleteModalOpen(false);
@@ -141,7 +150,9 @@ const LoanList = () => {
       const response = await axios.post(
         `https://borgavemilkdairybackend.onrender.com/api/v1/loan/deduct/${loanToDeduct.id}`,
         { loanAmount: amount },
-        { withCredentials: true }
+        { withCredentials: true , headers : {
+          authorization: `Bearer ${accessToken}`
+        }}
       );
       console.log("Loan deducted:", response.data);
       setIsDeductModalOpen(false);

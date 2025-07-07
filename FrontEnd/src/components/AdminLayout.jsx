@@ -4,17 +4,19 @@ import { AdminSidebar } from "./AdminSidebar";
 import { Menu } from "lucide-react"; // For the hamburger icon
 import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
-
+import { useAuth } from "../context/AuthContext";
 export const AdminLayout = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [admin, setAdmin] = useState(null);
-
+  const { accessToken } = useAuth();
   // Fetch admin details
   const fetchAdmin = async () => {
     try {
       const response = await axios.get(
         "https://borgavemilkdairybackend.onrender.com/api/v1/admin/get-admin",
-        { withCredentials: true }
+        { withCredentials: true , headers : {
+          authorization: `Bearer ${accessToken}`
+        }}
       );
       console.log(response);
       setAdmin(response.data.data.admin);

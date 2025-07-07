@@ -3,7 +3,7 @@ import axios from "axios";
 import FarmerForm from "../components/FarmerForm.jsx";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
-
+import { useAuth } from "../context/AuthContext" ;
 export const FarmerList = () => {
   const { t } = useTranslation();
 
@@ -16,7 +16,7 @@ export const FarmerList = () => {
   const [loading, setLoading] = useState(false);
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [farmerToDelete, setFarmerToDelete] = useState(null);
-
+  const { accessToken } = useAuth();
   // Fetch farmers from the backend API on mount
   useEffect(() => {
     const fetchFarmers = async () => {
@@ -24,7 +24,9 @@ export const FarmerList = () => {
       try {
         const response = await axios.get(
           "https://borgavemilkdairybackend.onrender.com/api/v1/farmer/get-all-farmers",
-          { withCredentials: true }
+          { withCredentials: true , headers : {
+            authorization: `Bearer ${accessToken}`
+          }}
         );
         // Assume the API returns { data: [farmer1, farmer2, ...] } or simply an array.
         const fetchedFarmers = response.data.data || response.data;
@@ -58,7 +60,9 @@ export const FarmerList = () => {
         const response = await axios.patch(
           `https://borgavemilkdairybackend.onrender.com/api/v1/farmer/update/${editingFarmer._id}`,
           farmer,
-          { withCredentials: true }
+          { withCredentials: true , headers : {
+            authorization: `Bearer ${accessToken}`
+          }}
         );
         const updatedFarmer = response.data.data || response.data;
         setFarmers((prevFarmers) =>
@@ -73,7 +77,9 @@ export const FarmerList = () => {
         const response = await axios.post(
           "https://borgavemilkdairybackend.onrender.com/api/v1/farmer/addFarmer",
           farmer,
-          { withCredentials: true }
+          { withCredentials: true , headers : {
+            authorization: `Bearer ${accessToken}`
+          }}
         );
         const newFarmer = response.data.data || response.data;
         setFarmers((prevFarmers) => [...prevFarmers, newFarmer]);
@@ -112,6 +118,9 @@ export const FarmerList = () => {
     try {
       await axios.delete(`https://borgavemilkdairybackend.onrender.com/api/v1/farmer/delete/${id}`, {
         withCredentials: true,
+        headers : {
+          authorization: `Bearer ${accessToken}`
+        }
       });
       setFarmers((prevFarmers) => prevFarmers.filter((f) => f._id !== id));
       setError(null);

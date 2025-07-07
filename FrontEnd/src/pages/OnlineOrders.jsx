@@ -106,17 +106,22 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useAuth } from "../context/AuthContext" ;
 
 const OnlineOrders = () => {
   const [orders, setOrders] = useState([]); // State to store fetched orders
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-
+  const { accessToken } = useAuth();
+  
   // Fetch orders from the backend
   useEffect(() => {
     axios
       .get("https://borgavemilkdairybackend.onrender.com/api/v1/online-order/get-all-orders" , {
-        withCredentials : true
+        withCredentials : true , 
+        headers : {
+          authorization: `Bearer ${accessToken}`
+        }
       }) // Adjust this API endpoint as needed
       .then((response) => {
         setOrders(response.data);
@@ -133,7 +138,10 @@ const OnlineOrders = () => {
   {
     axios
       .put(`https://borgavemilkdairybackend.onrender.com/api/v1/online-order/place-order/${orderId}` , {
-        withCredentials : true
+        withCredentials : true ,
+        headers : {
+          authorization: `Bearer ${accessToken}`
+        }
       }) // Adjust this API endpoint as needed
       .then((response) => {
         const updatedOrder = response.data;

@@ -8,14 +8,14 @@ import { useAuth } from "../context/AuthContext";
 import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-
+import { useAuth } from "../context/AuthContext";
 export const AdminSidebar = ({ isOpen, setSidebarOpen, admin }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const { logout } = useAuth();
   const [showReports, setShowReports] = useState(false);
   const { t } = useTranslation();
-
+  const { accessToken } = useAuth();
   useEffect(() => {
     if (!location.pathname.includes("/admin/reports")) {
       setShowReports(false);
@@ -45,7 +45,9 @@ export const AdminSidebar = ({ isOpen, setSidebarOpen, admin }) => {
       const response = await axios.post(
         "https://borgavemilkdairybackend.onrender.com/api/v1/admin/logout",
         {},
-        { withCredentials: true }
+        { withCredentials: true , headers : {
+          authorization: `Bearer ${accessToken}`
+        }}
       );
       console.log(response);
       console.log("Logout successful");

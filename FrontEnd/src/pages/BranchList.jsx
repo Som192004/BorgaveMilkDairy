@@ -4,6 +4,7 @@ import { BranchCard } from "../components/BranchCard";
 import { BranchForm } from "../components/BranchForm";
 import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
+import { useAuth } from "../context/AuthContext" ;
 
 export const BranchList = () => {
   const { t } = useTranslation();
@@ -17,6 +18,7 @@ export const BranchList = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [editId, setEditId] = useState(null);
+  const { accessToken } = useAuth();
   const [formData, setFormData] = useState({
     branchId: "",
     address: "",
@@ -29,8 +31,12 @@ export const BranchList = () => {
       try {
         const response = await axios.get(
           "https://borgavemilkdairybackend.onrender.com/api/v1/branch/get-branches",
-          { withCredentials: true }
-        );
+          { 
+          withCredentials: true , 
+          headers: {
+            authorization: `Bearer ${accessToken}`
+          }
+        });
         console.log("Branches fetched:", response.data.data);
 
         setBranches(response.data.data);
@@ -108,8 +114,11 @@ export const BranchList = () => {
     try {
       await axios.delete(
         `https://borgavemilkdairybackend.onrender.com/api/v1/branch/delete-branch/${deleteId}`,
-        { withCredentials: true }
-      );
+        { withCredentials: true , 
+          headers: {
+          authorization: `Bearer ${accessToken}`,
+        },
+      });
       setBranches((prevBranches) =>
         prevBranches.filter((branch) => branch.branchId !== deleteId)
       );
@@ -138,7 +147,9 @@ export const BranchList = () => {
             branchAddress: formData.address,
             location: formData.villageCity,
           },
-          { withCredentials: true }
+          { withCredentials: true , headers: {
+            authorization: `Bearer ${accessToken}`,
+          },}
         );
         if (response.status === 200) {
           setBranches((prevBranches) =>
@@ -162,7 +173,9 @@ export const BranchList = () => {
             branchAddress: formData.address,
             location: formData.villageCity,
           },
-          { withCredentials: true }
+          { withCredentials: true ,headers: {
+            authorization: `Bearer ${accessToken}`,
+          },}
         );
         if (response.status === 200 || response.status === 201) {
           setBranches((prevBranches) => [...prevBranches, response.data.data]);

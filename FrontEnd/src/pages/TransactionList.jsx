@@ -4,7 +4,7 @@ import TransactionForm from "../components/TransactionForm.jsx";
 import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
 import { ErrorDialog } from "../components/ErrorDialog";
-
+import { useAuth } from "../context/AuthContext.jsx";
 // Adjust the base URL as needed for your backend API
 const API_BASE_URL = "https://borgavemilkdairybackend.onrender.com/api/v1";
 
@@ -15,7 +15,7 @@ const TransactionList = () => {
   const [availableProducts, setAvailableProducts] = useState([]);
   const [error , setError] = useState([]);
   const [msg , setMsg] = useState();
-
+  const { accessToken } = useAuth();
 
   // Load transactions from API on mount
   useEffect(() => {
@@ -42,7 +42,9 @@ const TransactionList = () => {
       try {
         const response = await axios.get(
           `${API_BASE_URL}/category/get-all-products`,
-          { withCredentials: true }
+          { withCredentials: true , headers : {
+            authorization: `Bearer ${accessToken}`
+          }}
         );
         console.log("Fetched products:", response.data.data);
         setAvailableProducts(response.data.data);
@@ -62,7 +64,9 @@ const TransactionList = () => {
         const response = await axios.patch(
           `${API_BASE_URL}/transaction/update-transaction/${editingTransaction._id}`,
           transactionData,
-          { withCredentials: true }
+          { withCredentials: true , headers : {
+            authorization: `Bearer ${accessToken}`
+          }}
         );
         // Consistently extract the data from the ApiResponse wrapper
         const updatedTransaction = response.data.data;
@@ -82,7 +86,9 @@ const TransactionList = () => {
         const response = await axios.post(
           `${API_BASE_URL}/transaction/save-transaction`,
           transactionData,
-          { withCredentials: true }
+          { withCredentials: true , headers : {
+            authorization: `Bearer ${accessToken}`
+          }}
         );
         const newTransaction = response.data.data;
         setTransactions([...transactions, newTransaction]);
@@ -104,7 +110,9 @@ const TransactionList = () => {
     try {
       await axios.delete(
         `${API_BASE_URL}/transaction/delete-transaction/${id}`,
-        { withCredentials: true }
+        { withCredentials: true , headers : {
+          authorization: `Bearer ${accessToken}`
+        }}
       );
       setTransactions(transactions.filter((t) => t._id !== id));
     } catch (error) {
