@@ -23,7 +23,7 @@ const LoanList = () => {
       const response = await axios.get(
         "https://borgavemilkdairybackend.onrender.com/api/v1/loan/get-all-loans",
         { withCredentials: true, headers : {
-          authorization: `Bearer ${accessToken}`
+          Authorization: `Bearer ${accessToken}`
         } }
       );
       console.log(response);
@@ -71,7 +71,7 @@ const LoanList = () => {
           `https://borgavemilkdairybackend.onrender.com/api/v1/loan/update/${editingLoan.id}`,
           loan,
           { withCredentials: true , headers : {
-            authorization: `Bearer ${accessToken}`
+            Authorization: `Bearer ${accessToken}`
           }}
         );
         console.log("Loan updated:", response.data);
@@ -81,7 +81,7 @@ const LoanList = () => {
           "https://borgavemilkdairybackend.onrender.com/api/v1/loan/add-loan",
           loan,
           { withCredentials: true , headers : {
-            authorization: `Bearer ${accessToken}`
+            Authorization: `Bearer ${accessToken}`
           }}
         );
         console.log("Loan created:", response.data);
@@ -113,7 +113,7 @@ const LoanList = () => {
       const response = await axios.delete(
         `https://borgavemilkdairybackend.onrender.com/api/v1/loan/delete/${id}`,
         { withCredentials: true , headers : {
-          authorization: `Bearer ${accessToken}`
+          Authorization: `Bearer ${accessToken}`
         }}
       );
       console.log("Loan deleted:", response.data);
@@ -155,7 +155,7 @@ const LoanList = () => {
         `https://borgavemilkdairybackend.onrender.com/api/v1/loan/deduct/${loanToDeduct.id}`,
         { loanAmount: amount },
         { withCredentials: true , headers : {
-          authorization: `Bearer ${accessToken}`
+          Authorization: `Bearer ${accessToken}`
         }}
       );
       console.log("Loan deducted:", response.data);

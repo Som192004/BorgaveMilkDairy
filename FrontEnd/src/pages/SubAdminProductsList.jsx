@@ -30,7 +30,7 @@ export const SubAdminProductsList = () => {
       const response = await axios.get(`${API_URL}/get-all-categories`, {
         withCredentials: true,
         headers : {
-          authorization: `Bearer ${accessToken}`
+          Authorization: `Bearer ${accessToken}`
         }
       });
       console.log(response);
@@ -91,7 +91,7 @@ export const SubAdminProductsList = () => {
       const value = Math.abs(delta);
       const url = `${API_URL}/${product.categoryId}/product/update-stock/${product._id}`;
       await axios.patch(url, { operation, value }, { withCredentials: true , headers : {
-        authorization: `Bearer ${accessToken}`
+        Authorization: `Bearer ${accessToken}`
       } });
       toast.success("Stock updated successfully");
       fetchCategories();
@@ -110,7 +110,7 @@ export const SubAdminProductsList = () => {
         await axios.patch(url, productData, {
           withCredentials: true,
           headers: { "Content-Type": "multipart/form-data" , 
-            authorization: `Bearer ${accessToken}`
+            Authorization: `Bearer ${accessToken}`
           },
         });
         toast.success("Product updated successfully");
@@ -119,7 +119,7 @@ export const SubAdminProductsList = () => {
         await axios.post(url, productData, {
           withCredentials: true,
           headers: { "Content-Type": "multipart/form-data" , 
-            authorization: `Bearer ${accessToken}`
+            Authorization: `Bearer ${accessToken}`
           }},
         );
         toast.success("Product added successfully");
@@ -141,7 +141,7 @@ export const SubAdminProductsList = () => {
         const accessToken = localStorage.getItem('accessToken');
         const url = `${API_URL}/${deleteTarget.categoryId}/product/delete/${deleteTarget._id}`;
         await axios.delete(url, { withCredentials: true , headers : {
-          authorization: `Bearer ${accessToken}`
+          Authorization: `Bearer ${accessToken}`
         } });
         toast.success("Product deleted successfully");
         setShowConfirm(false);

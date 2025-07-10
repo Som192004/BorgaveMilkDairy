@@ -26,7 +26,7 @@ export const SubAdminLayout = () => {
       const response = await axios.get(
         `https://borgavemilkdairybackend.onrender.com/api/v1/subadmin/get/${subAdminId}`,
         { withCredentials: true , headers : {
-          authorization: `Bearer ${accessToken}`
+          Authorization: `Bearer ${accessToken}`
         }}
       );
       setSubAdmin(response.data.data);

@@ -47,7 +47,7 @@ export const CategoryForm = ({ onClose, onSuccess, editingCategory }) => {
             categoryDescription: description.trim(),
           },
           { withCredentials: true , headers : {
-            authorization: `Bearer ${accessToken}`
+            Authorization: `Bearer ${accessToken}`
           }}
         );
       } else {
@@ -59,7 +59,7 @@ export const CategoryForm = ({ onClose, onSuccess, editingCategory }) => {
             categoryDescription: description.trim(),
           },
           { withCredentials: true , headers : {
-            authorization: `Bearer ${accessToken}`
+            Authorization: `Bearer ${accessToken}`
           }}
         );
       }

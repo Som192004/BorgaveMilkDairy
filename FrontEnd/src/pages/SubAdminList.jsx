@@ -33,7 +33,7 @@ export const SubAdminList = () => {
         const response = await axios.get(
           "https://borgavemilkdairybackend.onrender.com/api/v1/subadmin/get-all-subadmins",
           { withCredentials: true, headers : {
-            authorization: `Bearer ${accessToken}`
+            Authorization: `Bearer ${accessToken}`
           } }
         );
         console.log("Fetched sub-admins:", response.data.data);
@@ -77,7 +77,7 @@ export const SubAdminList = () => {
       await axios.delete(
         `https://borgavemilkdairybackend.onrender.com/api/v1/subadmin/delete/${deleteId}`,
         { withCredentials: true , headers : {
-          authorization: `Bearer ${accessToken}`
+          Authorization: `Bearer ${accessToken}`
         } }
       );
       setSubAdmins((prev) =>
@@ -127,7 +127,7 @@ export const SubAdminList = () => {
           {
             withCredentials: true,
             headers: { "Content-Type": "multipart/form-data" , 
-              authorization: `Bearer ${accessToken}`
+              Authorization: `Bearer ${accessToken}`
             }},
         );
         if (response.status === 200) {
@@ -156,7 +156,7 @@ export const SubAdminList = () => {
           {
             withCredentials: true,
             headers: { "Content-Type": "multipart/form-data" ,
-              authorization: `Bearer ${accessToken}`
+              Authorization: `Bearer ${accessToken}`
             } },
         );
         console.log("Sub-admin created:", response);

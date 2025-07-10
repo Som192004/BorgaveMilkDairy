@@ -46,7 +46,7 @@ const LoanForm = ({
         const response = await axios.get(
           "https://borgavemilkdairybackend.onrender.com/api/v1/farmer/get-all-farmers",
           { withCredentials: true, headers : {
-            authorization: `Bearer ${accessToken}`
+            Authorization: `Bearer ${accessToken}`
           } }
         );
         const fetchedFarmers = response.data.data || response.data;

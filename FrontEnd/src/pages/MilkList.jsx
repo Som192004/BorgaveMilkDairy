@@ -27,7 +27,7 @@ const MilkList = () => {
       const response = await axios.get(
         "https://borgavemilkdairybackend.onrender.com/api/v1/milk/get-all-milk",
         { withCredentials: true , headers : {
-          authorization: `Bearer ${accessToken}`
+          Authorization: `Bearer ${accessToken}`
         }}
       );
       // Expected response: array of farmer objects with fields: farmerName, mobileNumber, transaction (array)
@@ -51,7 +51,7 @@ const MilkList = () => {
       const response = await axios.get(
         "https://borgavemilkdairybackend.onrender.com/api/v1/farmer/get-all-farmers",
         { withCredentials: true , headers : {
-          authorization: `Bearer ${accessToken}`
+          Authorization: `Bearer ${accessToken}`
         }}
       );
       const fetchedFarmers = response.data.data || response.data;
@@ -87,7 +87,7 @@ const MilkList = () => {
           `https://borgavemilkdairybackend.onrender.com/api/v1/milk/update-milk/${editingEntry.farmerId}/${editingEntry._id}`,
           entry,
           { withCredentials: true , headers : {
-            authorization: `Bearer ${accessToken}`
+            Authorization: `Bearer ${accessToken}`
           }}
         );
         console.log("Update response:", response);
@@ -109,7 +109,7 @@ const MilkList = () => {
           "https://borgavemilkdairybackend.onrender.com/api/v1/milk/add-milk",
           entry,
           { withCredentials: true , headers : {
-            authorization: `Bearer ${accessToken}`
+            Authorization: `Bearer ${accessToken}`
           } }
         );
         console.log("Add response:", response.data.data);
@@ -158,7 +158,7 @@ const MilkList = () => {
       await axios.delete(
         `https://borgavemilkdairybackend.onrender.com/api/v1/milk/delete-milk/${farmerId}/${transactionId}`,
         { withCredentials: true , headers : {
-          authorization: `Bearer ${accessToken}`
+          Authorization: `Bearer ${accessToken}`
         }}
       );
       // Update local state: remove the transaction from the corresponding farmer

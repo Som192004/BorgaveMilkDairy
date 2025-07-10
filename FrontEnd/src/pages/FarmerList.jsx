@@ -26,7 +26,7 @@ export const FarmerList = () => {
         const response = await axios.get(
           "https://borgavemilkdairybackend.onrender.com/api/v1/farmer/get-all-farmers",
           { withCredentials: true , headers : {
-            authorization: `Bearer ${accessToken}`
+            Authorization: `Bearer ${accessToken}`
           }}
         );
         // Assume the API returns { data: [farmer1, farmer2, ...] } or simply an array.
@@ -63,7 +63,7 @@ export const FarmerList = () => {
           `https://borgavemilkdairybackend.onrender.com/api/v1/farmer/update/${editingFarmer._id}`,
           farmer,
           { withCredentials: true , headers : {
-            authorization: `Bearer ${accessToken}`
+            Authorization: `Bearer ${accessToken}`
           }}
         );
         const updatedFarmer = response.data.data || response.data;
@@ -80,7 +80,7 @@ export const FarmerList = () => {
           "https://borgavemilkdairybackend.onrender.com/api/v1/farmer/addFarmer",
           farmer,
           { withCredentials: true , headers : {
-            authorization: `Bearer ${accessToken}`
+            Authorization: `Bearer ${accessToken}`
           }}
         );
         const newFarmer = response.data.data || response.data;
@@ -122,7 +122,7 @@ export const FarmerList = () => {
       await axios.delete(`https://borgavemilkdairybackend.onrender.com/api/v1/farmer/delete/${id}`, {
         withCredentials: true,
         headers : {
-          authorization: `Bearer ${accessToken}`
+          Authorization: `Bearer ${accessToken}`
         }
       });
       setFarmers((prevFarmers) => prevFarmers.filter((f) => f._id !== id));

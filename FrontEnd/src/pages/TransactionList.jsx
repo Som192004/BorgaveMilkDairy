@@ -26,7 +26,7 @@ const TransactionList = () => {
         const response = await axios.get(
           `${API_BASE_URL}/transaction/get-all-transactions`,
           { withCredentials: true , headers : {
-            authorization : `Bearer ${accessToken}`
+            Authorization : `Bearer ${accessToken}`
           }}
         );
         console.log("Fetched transactions:", response.data.data);
@@ -48,7 +48,7 @@ const TransactionList = () => {
         const response = await axios.get(
           `${API_BASE_URL}/category/get-all-products`,
           { withCredentials: true , headers : {
-            authorization: `Bearer ${accessToken}`
+            Authorization: `Bearer ${accessToken}`
           }}
         );
         console.log("Fetched products:", response.data.data);
@@ -71,7 +71,7 @@ const TransactionList = () => {
           `${API_BASE_URL}/transaction/update-transaction/${editingTransaction._id}`,
           transactionData,
           { withCredentials: true , headers : {
-            authorization: `Bearer ${accessToken}`
+            Authorization: `Bearer ${accessToken}`
           }}
         );
         // Consistently extract the data from the ApiResponse wrapper
@@ -94,7 +94,7 @@ const TransactionList = () => {
           `${API_BASE_URL}/transaction/save-transaction`,
           transactionData,
           { withCredentials: true , headers : {
-            authorization: `Bearer ${accessToken}`
+            Authorization: `Bearer ${accessToken}`
           }}
         );
         const newTransaction = response.data.data;
@@ -119,7 +119,7 @@ const TransactionList = () => {
       await axios.delete(
         `${API_BASE_URL}/transaction/delete-transaction/${id}`,
         { withCredentials: true , headers : {
-          authorization: `Bearer ${accessToken}`
+          Authorization: `Bearer ${accessToken}`
         }}
       );
       setTransactions(transactions.filter((t) => t._id !== id));

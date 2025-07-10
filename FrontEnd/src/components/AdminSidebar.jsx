@@ -46,7 +46,7 @@ export const AdminSidebar = ({ isOpen, setSidebarOpen, admin }) => {
         "https://borgavemilkdairybackend.onrender.com/api/v1/admin/logout",
         {},
         { withCredentials: true , headers : {
-          authorization: `Bearer ${accessToken}`
+          Authorization: `Bearer ${accessToken}`
         }}
       );
       console.log(response);

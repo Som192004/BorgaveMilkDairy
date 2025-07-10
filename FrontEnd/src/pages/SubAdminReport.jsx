@@ -37,7 +37,7 @@ export const SubAdminReport = () => {
         responseType: "blob",
         withCredentials: true,
         headers : {
-          authorization: `Bearer ${accessToken}`
+          Authorization: `Bearer ${accessToken}`
         }
       });
 

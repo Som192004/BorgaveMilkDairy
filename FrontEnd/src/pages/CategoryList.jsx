@@ -22,7 +22,7 @@ export const CategoryList = () => {
         "https://borgavemilkdairybackend.onrender.com/api/v1/category/get-all-categories",
         { withCredentials: true ,
           headers: {
-            authorization: `Bearer ${accessToken}`,
+            Authorization: `Bearer ${accessToken}`,
           } 
          }
       );
@@ -66,7 +66,7 @@ export const CategoryList = () => {
         `https://borgavemilkdairybackend.onrender.com/api/v1/category/delete-category/${id}`,
         { withCredentials: true , 
           headers: {
-            authorization: `Bearer ${accessToken}`,
+            Authorization: `Bearer ${accessToken}`,
           }}
       );
       // Re-fetch categories to update state

@@ -35,7 +35,7 @@ export const BranchList = () => {
           { 
           withCredentials: true , 
           headers: {
-            authorization: `Bearer ${accessToken}`
+            Authorization: `Bearer ${accessToken}`
           }
         });
         console.log("Branches fetched:", response.data.data);
@@ -118,7 +118,7 @@ export const BranchList = () => {
         `https://borgavemilkdairybackend.onrender.com/api/v1/branch/delete-branch/${deleteId}`,
         { withCredentials: true , 
           headers: {
-          authorization: `Bearer ${accessToken}`,
+          Authorization: `Bearer ${accessToken}`,
         },
       });
       setBranches((prevBranches) =>
@@ -151,7 +151,7 @@ export const BranchList = () => {
             location: formData.villageCity,
           },
           { withCredentials: true , headers: {
-            authorization: `Bearer ${accessToken}`,
+            Authorization: `Bearer ${accessToken}`,
           },}
         );
         if (response.status === 200) {
@@ -178,7 +178,7 @@ export const BranchList = () => {
             location: formData.villageCity,
           },
           { withCredentials: true ,headers: {
-            authorization: `Bearer ${accessToken}`,
+            Authorization: `Bearer ${accessToken}`,
           },}
         );
         if (response.status === 200 || response.status === 201) {

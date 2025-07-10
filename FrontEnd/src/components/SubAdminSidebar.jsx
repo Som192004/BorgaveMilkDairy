@@ -51,7 +51,7 @@ export const SubAdminSidebar = ({ isOpen, setSidebarOpen, subAdmin }) => {
         "https://borgavemilkdairybackend.onrender.com/api/v1/subadmin/logout",
         {},
         { withCredentials: true, headers : {
-          authorization: `Bearer ${accessToken}`
+          Authorization: `Bearer ${accessToken}`
         } }
       );
       if (response.status === 200) {

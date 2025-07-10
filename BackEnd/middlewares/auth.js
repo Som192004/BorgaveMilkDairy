@@ -7,9 +7,9 @@ import { Admin } from "../model/Admin.js";
 export const authenticateSubAdmin = async (req, res, next) => {
   try {
     const token =
-      req.cookies.accessToken || req.headers.authorization?.split(" ")[1] || req.body.Authorization;
+      req.cookies.accessToken || req.headers.Authorization?.split(" ")[1] || req.body.Authorization;
       console.log(req.cookies.accessToken);
-      console.log(req.headers.authorization);
+      console.log(req.headers.Authorization);
     console.log("AuthenticateSubAdmin: Token received:", token);
 
     if (!token) {
@@ -38,7 +38,7 @@ export const authenticateSubAdmin = async (req, res, next) => {
 export const authenticateAdmin = async (req, res, next) => {
   try {
     const token =
-      req.cookies.accessToken || req.headers.authorization?.split(" ")[1] || req.body.Authorization;
+      req.cookies.accessToken || req.headers.Authorization?.split(" ")[1] || req.body.Authorization;
     console.log("AuthenticateAdmin: Token received:", token);
 
     if (!token) {

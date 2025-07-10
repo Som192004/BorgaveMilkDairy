@@ -34,7 +34,7 @@ export const EditImageSlider = () => {
         const { data } = await axios.get(
           "https://borgavemilkdairybackend.onrender.com/api/v1/new-offer/get-all-offers",
           { withCredentials: true, headers: {
-            authorization: `Bearer ${accessToken}`,
+            Authorization: `Bearer ${accessToken}`,
           } }
         );
         console.log("Fetched slides:", data);
@@ -125,7 +125,7 @@ export const EditImageSlider = () => {
             formData,
             {
               withCredentials: true,
-              headers: { "Content-Type": "multipart/form-data" , authorization: `Bearer ${accessToken}`},
+              headers: { "Content-Type": "multipart/form-data" , Authorization: `Bearer ${accessToken}`},
             }
           );
           console.log("Slide updated with new file:", response.data);
@@ -134,7 +134,7 @@ export const EditImageSlider = () => {
             `https://borgavemilkdairybackend.onrender.com/api/v1/new-offer/edit-offer/${formData._id}`,
             { title: formData.title, description: formData.description },
             { withCredentials: true , headers : {
-              authorization: `Bearer ${accessToken}`
+              Authorization: `Bearer ${accessToken}`
             }}
           );
           console.log("Slide updated without new file:", response.data);
@@ -155,7 +155,7 @@ export const EditImageSlider = () => {
           {
             withCredentials: true,
             headers: { "Content-Type": "multipart/form-data" ,
-              authorization: `Bearer ${accessToken}`
+              Authorization: `Bearer ${accessToken}`
             }}
         );
         console.log("New slide created:", response.data);
@@ -186,7 +186,7 @@ export const EditImageSlider = () => {
         {
           withCredentials: true,
           headers: { "Content-Type": "multipart/form-data",
-            authorization: `Bearer ${accessToken}`
+            Authorization: `Bearer ${accessToken}`
           } },
       );
       console.log("Slide deleted:", response.data);
