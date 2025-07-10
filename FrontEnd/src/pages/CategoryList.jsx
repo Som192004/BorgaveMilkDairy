@@ -17,6 +17,7 @@ export const CategoryList = () => {
     setLoading(true);
     setError("");
     try {
+      const accessToken = localStorage.getItem('accessToken');
       const response = await axios.get(
         "https://borgavemilkdairybackend.onrender.com/api/v1/category/get-all-categories",
         { withCredentials: true ,
@@ -60,6 +61,7 @@ export const CategoryList = () => {
     if (!window.confirm("Are you sure you want to delete this category?"))
       return;
     try {
+      const accessToken = localStorage.getItem('accessToken');
       await axios.delete(
         `https://borgavemilkdairybackend.onrender.com/api/v1/category/delete-category/${id}`,
         { withCredentials: true , 

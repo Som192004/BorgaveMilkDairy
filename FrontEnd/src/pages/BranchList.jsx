@@ -29,6 +29,7 @@ export const BranchList = () => {
   useEffect(() => {
     const fetchBranches = async () => {
       try {
+        const accessToken = localStorage.getItem('accessToken');
         const response = await axios.get(
           "https://borgavemilkdairybackend.onrender.com/api/v1/branch/get-branches",
           { 
@@ -112,6 +113,7 @@ export const BranchList = () => {
   // Delete branch and update state
   const handleDelete = async () => {
     try {
+      const accessToken = localStorage.getItem('accessToken');
       await axios.delete(
         `https://borgavemilkdairybackend.onrender.com/api/v1/branch/delete-branch/${deleteId}`,
         { withCredentials: true , 
@@ -140,6 +142,7 @@ export const BranchList = () => {
 
     try {
       if (isEditing) {
+        const accessToken = localStorage.getItem('accessToken');
         const response = await axios.patch(
           `https://borgavemilkdairybackend.onrender.com/api/v1/branch/update-branch/${editId}`,
           {
@@ -166,6 +169,7 @@ export const BranchList = () => {
           );
         }
       } else {
+        const accessToken = localStorage.getItem('accessToken');
         const response = await axios.post(
           "https://borgavemilkdairybackend.onrender.com/api/v1/branch/create-branch",
           {

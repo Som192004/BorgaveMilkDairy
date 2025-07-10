@@ -22,6 +22,7 @@ export const SubAdminLayout = () => {
     }
     const subAdminId = responseByLS.data.data.subAdmin.id;
     try {
+      const accessToken = localStorage.getItem('accessToken');
       const response = await axios.get(
         `https://borgavemilkdairybackend.onrender.com/api/v1/subadmin/get/${subAdminId}`,
         { withCredentials: true , headers : {

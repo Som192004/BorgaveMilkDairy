@@ -26,6 +26,7 @@ export const SubAdminProductsList = () => {
   const fetchCategories = async () => {
     setLoading(true);
     try {
+      const accessToken = localStorage.getItem('accessToken');
       const response = await axios.get(`${API_URL}/get-all-categories`, {
         withCredentials: true,
         headers : {
@@ -85,6 +86,7 @@ export const SubAdminProductsList = () => {
   // Unified handler to update stock based on a delta value (positive for add, negative for subtract)
   const handleUpdateStock = async (product, delta) => {
     try {
+      const accessToken = localStorage.getItem('accessToken');
       const operation = delta > 0 ? "add" : "subtract";
       const value = Math.abs(delta);
       const url = `${API_URL}/${product.categoryId}/product/update-stock/${product._id}`;
@@ -102,6 +104,7 @@ export const SubAdminProductsList = () => {
   // Save product (for add or update)
   const handleSaveProduct = async (categoryId, productData) => {
     try {
+      const accessToken = localStorage.getItem('accessToken');
       if (isEditing && editingProduct) {
         const url = `${API_URL}/${editingProduct.categoryId}/product/update/${editingProduct._id}`;
         await axios.patch(url, productData, {
@@ -135,6 +138,7 @@ export const SubAdminProductsList = () => {
   const confirmDelete = async () => {
     if (deleteTarget) {
       try {
+        const accessToken = localStorage.getItem('accessToken');
         const url = `${API_URL}/${deleteTarget.categoryId}/product/delete/${deleteTarget._id}`;
         await axios.delete(url, { withCredentials: true , headers : {
           authorization: `Bearer ${accessToken}`

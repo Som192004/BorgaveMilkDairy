@@ -31,6 +31,7 @@ export const SubAdminReport = () => {
 
   const downloadReport = async (url, filename) => {
     try {
+      const accessToken = localStorage.getItem('accessToken');
       setLoading(true);
       const response = await axios.get(`${BASE_URL}${url}`, {
         responseType: "blob",

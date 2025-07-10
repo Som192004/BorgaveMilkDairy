@@ -12,6 +12,7 @@ export const AdminLayout = () => {
   // Fetch admin details
   const fetchAdmin = async () => {
     try {
+      const accessToken = localStorage.getItem('accessToken');
       const response = await axios.get(
         "https://borgavemilkdairybackend.onrender.com/api/v1/admin/get-admin",
         { withCredentials: true , headers : {

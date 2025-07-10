@@ -29,6 +29,7 @@ export const SubAdminList = () => {
   useEffect(() => {
     const fetchSubAdmins = async () => {
       try {
+        const accessToken = localStorage.getItem('accessToken');
         const response = await axios.get(
           "https://borgavemilkdairybackend.onrender.com/api/v1/subadmin/get-all-subadmins",
           { withCredentials: true, headers : {
@@ -72,6 +73,7 @@ export const SubAdminList = () => {
   // Handle deletion API call
   const handleDelete = async () => {
     try {
+      const accessToken = localStorage.getItem('accessToken');
       await axios.delete(
         `https://borgavemilkdairybackend.onrender.com/api/v1/subadmin/delete/${deleteId}`,
         { withCredentials: true , headers : {
@@ -106,6 +108,7 @@ export const SubAdminList = () => {
   // Handle saving (create or update) a sub-admin via API
   const handleSaveSubAdmin = async () => {
     try {
+      const accessToken = localStorage.getItem('accessToken');
       if (isEditing) {
         // Update existing sub-admin using FormData to include file
         const dataUpdate = new FormData();
@@ -146,7 +149,7 @@ export const SubAdminList = () => {
         dataCreate.append("subAdminPassword", formData.password);
         dataCreate.append("address", formData.address);
         dataCreate.append("branchId", formData.branchId);
-
+        const accessToken = localStorage.getItem('accessToken');
         const response = await axios.post(
           "https://borgavemilkdairybackend.onrender.com/api/v1/subadmin/addSubAdmin",
           dataCreate,

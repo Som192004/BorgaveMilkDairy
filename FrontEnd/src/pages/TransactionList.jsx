@@ -19,11 +19,15 @@ const TransactionList = () => {
 
   // Load transactions from API on mount
   useEffect(() => {
+
     const loadTransactions = async () => {
       try {
+        const accessToken = localStorage.getItem("accessToken");
         const response = await axios.get(
           `${API_BASE_URL}/transaction/get-all-transactions`,
-          { withCredentials: true }
+          { withCredentials: true , headers : {
+            authorization : `Bearer ${accessToken}`
+          }}
         );
         console.log("Fetched transactions:", response.data.data);
         setTransactions(response.data.data);
@@ -40,6 +44,7 @@ const TransactionList = () => {
   useEffect(() => {
     const loadProducts = async () => {
       try {
+        const accessToken = localStorage.getItem("accessToken");
         const response = await axios.get(
           `${API_BASE_URL}/category/get-all-products`,
           { withCredentials: true , headers : {
@@ -61,6 +66,7 @@ const TransactionList = () => {
     if (editingTransaction) {
       // Update existing transaction
       try {
+        const accessToken = localStorage.getItem('accessToken');
         const response = await axios.patch(
           `${API_BASE_URL}/transaction/update-transaction/${editingTransaction._id}`,
           transactionData,
@@ -83,6 +89,7 @@ const TransactionList = () => {
     } else {
       // Create a new transaction
       try {
+        const accessToken = localStorage.getItem('accessToken');
         const response = await axios.post(
           `${API_BASE_URL}/transaction/save-transaction`,
           transactionData,
@@ -108,6 +115,7 @@ const TransactionList = () => {
 
   const handleDelete = async (id) => {
     try {
+      const accessToken = localStorage.getItem('accessToken');
       await axios.delete(
         `${API_BASE_URL}/transaction/delete-transaction/${id}`,
         { withCredentials: true , headers : {

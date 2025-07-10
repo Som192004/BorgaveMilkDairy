@@ -37,6 +37,7 @@ export const CategoryForm = ({ onClose, onSuccess, editingCategory }) => {
     setIsSubmitting(true);
     try {
       let response;
+      const accessToken = localStorage.getItem('accessToken');
       if (editingCategory) {
         // Update category API call: PATCH /api/v1/category/update-category/:id
         response = await axios.patch(

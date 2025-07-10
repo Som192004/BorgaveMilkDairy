@@ -359,6 +359,7 @@ export const ContactUs = () => {
   const getAllBranches = async () => {
     try
     {
+      const accessToken = localStorage.getItem('accessToken');
       const response = await axios.get(
         "https://borgavemilkdairybackend.onrender.com/api/v1/branch/get-branches-for-customer",
         { withCredentials: true , headers: {
@@ -445,6 +446,7 @@ export const ContactUs = () => {
         };
   
         // Place order
+        const accessToken = localStorage.getItem('accessToken');
         axios
           .post("https://borgavemilkdairybackend.onrender.com/api/v1/online-order/create-order", {orderData}, { withCredentials: true , headers: {
             authorization: `Bearer ${accessToken}`,

@@ -30,6 +30,7 @@ export const EditImageSlider = () => {
       setLoading(true);
       setError("");
       try {
+        const accessToken = localStorage.getItem('accessToken');
         const { data } = await axios.get(
           "https://borgavemilkdairybackend.onrender.com/api/v1/new-offer/get-all-offers",
           { withCredentials: true, headers: {
@@ -117,6 +118,7 @@ export const EditImageSlider = () => {
       if (formData._id) {
         // Update existing slide
         let response;
+        const accessToken = localStorage.getItem('accessToken');
         if (isFileModified) {
           response = await axios.post(
             `https://borgavemilkdairybackend.onrender.com/api/v1/new-offer/edit-offer/${formData._id}`,
@@ -145,6 +147,7 @@ export const EditImageSlider = () => {
         );
         setIsFileModified(false);
       } else {
+        const accessToken = localStorage.getItem('accessToken');
         // Create a new slide
         const response = await axios.post(
           "https://borgavemilkdairybackend.onrender.com/api/v1/new-offer/add-new-offer",
@@ -176,6 +179,7 @@ export const EditImageSlider = () => {
   // Delete slide handler with a confirmation modal
   const handleDelete = async (_id) => {
     try {
+      const accessToken = localStorage.getItem('accessToken');
       const response = await axios.post(
         `https://borgavemilkdairybackend.onrender.com/api/v1/new-offer/delete-offer/${_id}`,
         {},

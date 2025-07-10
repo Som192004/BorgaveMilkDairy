@@ -46,6 +46,7 @@ export const SubAdminSidebar = ({ isOpen, setSidebarOpen, subAdmin }) => {
   const handleLogout = async () => {
     logout();
     try {
+      const accessToken = localStorage.getItem('accessToken');
       const response = await axios.post(
         "https://borgavemilkdairybackend.onrender.com/api/v1/subadmin/logout",
         {},

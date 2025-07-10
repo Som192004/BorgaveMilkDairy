@@ -47,6 +47,7 @@ export const ProductList = () => {
   useEffect(() => {
     const fetchBranches = async () => {
       try {
+        
         const response = await axios.get(
           "https://borgavemilkdairybackend.onrender.com/api/v1/branch/get-branches-for-customer"
         );

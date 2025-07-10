@@ -22,6 +22,7 @@ export const FarmerList = () => {
     const fetchFarmers = async () => {
       setLoading(true);
       try {
+        const accessToken = localStorage.getItem('accessToken');
         const response = await axios.get(
           "https://borgavemilkdairybackend.onrender.com/api/v1/farmer/get-all-farmers",
           { withCredentials: true , headers : {
@@ -55,6 +56,7 @@ export const FarmerList = () => {
   const handleSaveFarmer = async (farmer) => {
     
     try {
+      const accessToken = localStorage.getItem('accessToken');
       if (editingFarmer) {
         // Update existing farmer (PATCH request)
         const response = await axios.patch(
@@ -116,6 +118,7 @@ export const FarmerList = () => {
   // Delete a farmer via API
   const handleDelete = async (id) => {
     try {
+      const accessToken = localStorage.getItem('accessToken');
       await axios.delete(`https://borgavemilkdairybackend.onrender.com/api/v1/farmer/delete/${id}`, {
         withCredentials: true,
         headers : {

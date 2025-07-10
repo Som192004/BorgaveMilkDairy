@@ -41,6 +41,7 @@ export const AdminSidebar = ({ isOpen, setSidebarOpen, admin }) => {
   const handleLogout = async () => {
     logout();
     try {
+      const accessToken = localStorage.getItem('accessToken');
       const response = await axios.post(
         "https://borgavemilkdairybackend.onrender.com/api/v1/admin/logout",
         {},

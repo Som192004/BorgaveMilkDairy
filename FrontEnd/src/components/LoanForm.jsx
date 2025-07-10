@@ -42,6 +42,7 @@ const LoanForm = ({
   useEffect(() => {
     const fetchFarmers = async () => {
       try {
+        const accessToken = localStorage.getItem('accessToken');
         const response = await axios.get(
           "https://borgavemilkdairybackend.onrender.com/api/v1/farmer/get-all-farmers",
           { withCredentials: true, headers : {

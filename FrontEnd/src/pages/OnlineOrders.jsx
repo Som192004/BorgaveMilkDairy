@@ -116,6 +116,7 @@ const OnlineOrders = () => {
   
   // Fetch orders from the backend
   useEffect(() => {
+    const accessToken = localStorage.getItem('accessToken');
     axios
       .get("https://borgavemilkdairybackend.onrender.com/api/v1/online-order/get-all-orders" , {
         withCredentials : true , 
@@ -137,6 +138,7 @@ const OnlineOrders = () => {
   const handleOrder = async (orderId) =>
   {
     console.log("accessToken", accessToken)
+    const accessToken = localStorage.getItem('accessToken');
     axios
       .put(`https://borgavemilkdairybackend.onrender.com/api/v1/online-order/place-order/${orderId}` , {
         withCredentials : true ,

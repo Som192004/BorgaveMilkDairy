@@ -23,6 +23,7 @@ const MilkList = () => {
   const fetchMilkEntries = async () => {
     setLoadingMilk(true);
     try {
+      const accessToken = localStorage.getItem('accessToken');
       const response = await axios.get(
         "https://borgavemilkdairybackend.onrender.com/api/v1/milk/get-all-milk",
         { withCredentials: true , headers : {
@@ -46,6 +47,7 @@ const MilkList = () => {
   const fetchFarmers = async () => {
     setLoadingFarmers(true);
     try {
+      const accessToken = localStorage.getItem('accessToken');
       const response = await axios.get(
         "https://borgavemilkdairybackend.onrender.com/api/v1/farmer/get-all-farmers",
         { withCredentials: true , headers : {
@@ -78,6 +80,7 @@ const MilkList = () => {
   // Optimistically update local state when saving a milk transaction
   const handleSaveMilkEntry = async (entry) => {
     try {
+      const accessToken = localStorage.getItem('accessToken');
       if (editingEntry) {
         // Update existing milk transaction
         const response = await axios.patch(
@@ -151,6 +154,7 @@ const MilkList = () => {
   // Delete a milk transaction with optimistic local update (called after confirmation)
   const handleDeleteConfirmed = async (transactionId, farmerId) => {
     try {
+      const accessToken = localStorage.getItem('accessToken');
       await axios.delete(
         `https://borgavemilkdairybackend.onrender.com/api/v1/milk/delete-milk/${farmerId}/${transactionId}`,
         { withCredentials: true , headers : {

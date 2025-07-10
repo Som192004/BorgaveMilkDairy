@@ -19,6 +19,7 @@ const LoanList = () => {
   // Fetch loans from the backend and flatten the embedded loan arrays
   const fetchLoans = async () => {
     try {
+      const accessToken = localStorage.getItem('accessToken');
       const response = await axios.get(
         "https://borgavemilkdairybackend.onrender.com/api/v1/loan/get-all-loans",
         { withCredentials: true, headers : {
@@ -63,6 +64,7 @@ const LoanList = () => {
   // Save (create or update) a loan via the backend
   const handleSaveLoan = async (loan) => {
     try {
+      const accessToken = localStorage.getItem('accessToken');
       if (editingLoan) {
         // Update existing loan
         const response = await axios.put(
@@ -107,6 +109,7 @@ const LoanList = () => {
   // Delete loan via backend
   const handleDeleteConfirmed = async (id) => {
     try {
+      const accessToken = localStorage.getItem('accessToken');
       const response = await axios.delete(
         `https://borgavemilkdairybackend.onrender.com/api/v1/loan/delete/${id}`,
         { withCredentials: true , headers : {
@@ -147,6 +150,7 @@ const LoanList = () => {
       return;
     }
     try {
+      const accessToken = localStorage.getItem('accessToken');
       const response = await axios.post(
         `https://borgavemilkdairybackend.onrender.com/api/v1/loan/deduct/${loanToDeduct.id}`,
         { loanAmount: amount },
