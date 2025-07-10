@@ -150,7 +150,7 @@ const OnlineOrders = () => {
       }) // Adjust this API endpoint as needed
       .then((response) => {
         const updatedOrder = response.data;
-        
+        console.log(updatedOrder)
         setOrders((prevOrders) =>
         prevOrders.map((order) =>
           order._id === updatedOrder._id ? updatedOrder : order
