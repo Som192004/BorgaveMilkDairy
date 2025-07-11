@@ -17,5 +17,5 @@ inquiries. Developed a user-friendly interface, generated automated reports, man
 and implemented role-based access controls for administrators.
 
 
-## Data Model
+## 🔗 Data Model
 
