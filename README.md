@@ -17,7 +17,5 @@ inquiries. Developed a user-friendly interface, generated automated reports, man
 and implemented role-based access controls for administrators.
 
 
-## Screenshots of Admin and SubAdmin Modules
-
-![App Screenshot]()
+## Data Model
 
