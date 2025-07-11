@@ -221,7 +221,7 @@ const OnlineOrders = () => {
                 </div> */}
                 <div className="mt-4 flex justify-between">
                   {
-                    order.isPlaced ? <>Order Placed</> : <button className="px-4 py-2 bg-green-500 text-white rounded-md shadow-md hover:bg-green-600 transition" onClick={() => handleOrder(order._id)}>
+                    order.isOrderdPlaced ? <>Order Placed</> : <button className="px-4 py-2 bg-green-500 text-white rounded-md shadow-md hover:bg-green-600 transition" onClick={() => handleOrder(order._id)}>
                     Place Order
                   </button>
                   }

@@ -87,7 +87,7 @@ export const placeOrder = async (req,res) => {
     try{
         const updatedOrder = await onlineOrder.findByIdAndUpdate(
             req.params.id,
-            {isPlaced : true},
+            {isOrderdPlaced : true},
             { new: true }
         );
         console.log(req.params.id);
