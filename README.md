@@ -18,4 +18,4 @@ and implemented role-based access controls for administrators.
 
 
 ## 🔗 Data Model
-
+![Data Model](https://github.com/user-attachments/assets/8ad83568-b791-4d26-a1c8-b2fea0e72913)
