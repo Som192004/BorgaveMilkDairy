@@ -100,6 +100,6 @@ export const placeOrder = async (req,res) => {
     }
     catch(err)
     {
-        res.status(500).json({message : error.message})
+        res.status(500).json({message : err.message})
     }
 }
