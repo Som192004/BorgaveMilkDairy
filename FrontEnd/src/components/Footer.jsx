@@ -119,7 +119,7 @@ export const Footer = () => {
           className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-300"
           aria-label="Back to Top"
         >
-          <FaArrowUp className="w-5 h-5" />
+          <FaArrowUp className="w-5 h-5 cursor-pointer" />
         </button>
       </div>
     </footer>

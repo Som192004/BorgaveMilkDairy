@@ -61,13 +61,13 @@ export function About() {
             <div className="flex space-x-4">
               <button
                 onClick={() => navigate("/about-us")}
-                className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-lg shadow-md transform transition duration-300"
+                className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-lg shadow-md transform transition duration-300 cursor-pointer"
               >
                 {t("about.learnMore", { defaultValue: "Learn More" })}
               </button>
               <button
                 onClick={() => navigate("/contact-us")}
-                className="bg-transparent border-2 border-blue-500 hover:bg-blue-700 hover:text-white text-blue-900 py-2 px-6 rounded-lg shadow-md transform transition duration-300"
+                className="bg-transparent border-2 border-blue-500 hover:bg-blue-700 hover:text-white text-blue-900 py-2 px-6 rounded-lg shadow-md transform transition duration-300 cursor-pointer"
               >
                 {t("about.contactUs", { defaultValue: "Contact Us" })}
               </button>

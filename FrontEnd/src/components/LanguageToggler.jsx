@@ -43,7 +43,7 @@ export const LanguageToggler = ({ isMobile = false }) => {
             i18n.language === "en"
               ? "text-white"
               : "text-gray-600 hover:text-gray-900"
-          }`}
+          } cursor-pointer`}
           aria-pressed={i18n.language === "en"}
         >
           <span className="tracking-wide">{t("navbar.language.english")}</span>
@@ -55,7 +55,7 @@ export const LanguageToggler = ({ isMobile = false }) => {
             i18n.language === "mr"
               ? "text-white"
               : "text-gray-600 hover:text-gray-900"
-          }`}
+          } cursor-pointer`}
           aria-pressed={i18n.language === "mr"}
         >
           <span>{t("navbar.language.marathi")}</span>

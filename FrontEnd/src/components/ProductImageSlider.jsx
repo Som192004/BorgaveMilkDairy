@@ -94,14 +94,14 @@ export function ProductImageSlider({
         className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/30 hover:bg-white/50 p-2 rounded-full transition-all focus:outline-none"
         aria-label="Previous slide"
       >
-        <ArrowLeft className="h-6 w-6 text-white" />
+        <ArrowLeft className="h-6 w-6 text-white cursor-pointer" />
       </button>
       <button
         onClick={handleNext}
         className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/30 hover:bg-white/50 p-2 rounded-full transition-all focus:outline-none"
         aria-label="Next slide"
       >
-        <ArrowRight className="h-6 w-6 text-white" />
+        <ArrowRight className="h-6 w-6 text-white cursor-pointer" />
       </button>
 
 

@@ -113,7 +113,7 @@ export const Login = () => {
     <div className="flex items-center justify-center w-full h-screen overflow-y-auto">
       <button
         onClick={() => navigate("/")}
-        className="absolute sm:top-10 sm:left-10 top-4 left-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white p-2 rounded-full shadow-md hover:bg-blue-700 transition"
+        className="absolute sm:top-10 sm:left-10 top-4 left-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white p-2 rounded-full shadow-md hover:bg-blue-700 transition cursor-pointer"
       >
         <ArrowLeft size={30} />
       </button>
@@ -130,7 +130,7 @@ export const Login = () => {
           </p>
         )}
 
-        <div className="mb-6">
+        <div className="mb-6 cursor-pointer">
           <label
             htmlFor="role"
             className="block text-sm font-medium text-gray-700 mb-2"
@@ -142,7 +142,7 @@ export const Login = () => {
             value={role}
             onChange={(e) => setRole(e.target.value)}
             required
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 cursor-pointer"
           >
             <option value="">{t("login.form.selectRole")}</option>
             <option value="Admin">{t("login.form.admin")}</option>
@@ -188,7 +188,7 @@ export const Login = () => {
 
         <button
           type="submit"
-          className="w-full bg-[#4c76ba] text-white py-3 rounded-lg shadow-md hover:bg-[#1b2d5b] transition duration-300"
+          className="w-full bg-[#4c76ba] text-white py-3 rounded-lg shadow-md hover:bg-[#1b2d5b] transition duration-300 cursor-pointer"
         >
           {t("login.form.submitButton")}
         </button>
