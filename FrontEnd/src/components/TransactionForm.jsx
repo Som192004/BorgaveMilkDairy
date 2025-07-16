@@ -256,7 +256,7 @@ export const TransactionForm = ({
                 <button
                   type="button"
                   onClick={() => removeProduct(index)}
-                  className="mt-3 bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 transition duration-200 focus:outline-none focus:ring-2 focus:ring-red-400"
+                  className="mt-3 bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 transition duration-200 focus:outline-none focus:ring-2 focus:ring-red-400 cursor-pointer"
                 >
                   Remove
                 </button>
@@ -267,7 +267,7 @@ export const TransactionForm = ({
           <button
             type="button"
             onClick={addProduct}
-            className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 w-full transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 w-full transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
           >
             + Add Another Product
           </button>
@@ -280,13 +280,13 @@ export const TransactionForm = ({
             <button
               type="button"
               onClick={() => setIsFormOpen(false)}
-              className="flex-1 bg-gray-400 text-white px-3 sm:px-4 py-2 rounded-lg hover:bg-gray-500 transition duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400"
+              className="flex-1 bg-gray-400 text-white px-3 sm:px-4 py-2 rounded-lg hover:bg-gray-500 transition duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 cursor-pointer"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="flex-1 bg-[#2c447f] text-white px-3 sm:px-4 py-2 rounded-lg hover:bg-[#1b2d5b] transition duration-200 focus:outline-none focus:ring-2 focus:ring-[#2c447f]"
+              className="flex-1 bg-[#2c447f] text-white px-3 sm:px-4 py-2 rounded-lg hover:bg-[#1b2d5b] transition duration-200 focus:outline-none focus:ring-2 focus:ring-[#2c447f] cursor-pointer"
             >
               {isEditing ? "Update Transaction" : "Save Transaction"}
             </button>

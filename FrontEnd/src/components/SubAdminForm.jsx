@@ -102,7 +102,7 @@ export const SubAdminForm = ({
                 <button
                   type="button"
                   onClick={handleRemoveImage}
-                  className="absolute top-2 right-2 bg-white rounded-full p-1 shadow-md hover:bg-gray-200 transition"
+                  className="absolute top-2 right-2 bg-white rounded-full p-1 shadow-md hover:bg-gray-200 transition cursor-pointer"
                 >
                   <XCircle className="h-6 w-6 text-red-500" />
                 </button>
@@ -166,13 +166,13 @@ export const SubAdminForm = ({
         <div className="flex justify-between mt-6 space-x-4">
           <button
             onClick={() => setIsFormOpen(false)}
-            className="flex-1 bg-gray-400 text-white px-4 py-2 rounded-lg hover:bg-gray-500 transition"
+            className="flex-1 bg-gray-400 text-white px-4 py-2 rounded-lg hover:bg-gray-500 transition cursor-pointer"
           >
             {t("subAdmin.form.cancel")}
           </button>
           <button
             onClick={handleSaveSubAdmin}
-            className="flex-1 bg-[#2c447f] text-white px-4 py-2 rounded-lg hover:bg-[#1b2d5b] transition"
+            className="flex-1 bg-[#2c447f] text-white px-4 py-2 rounded-lg hover:bg-[#1b2d5b] transition cursor-pointer"
           >
             {t("subAdmin.form.save")}
           </button>

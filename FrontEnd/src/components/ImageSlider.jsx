@@ -93,14 +93,14 @@ export function ImageSlider({
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/30 hover:bg-white/50 p-2 rounded-full transition-all focus:outline-none"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/30 hover:bg-white/50 p-2 rounded-full transition-all focus:outline-none cursor-pointer"
         aria-label="Previous slide"
       >
         <ArrowLeft className="h-6 w-6 text-white cursor-pointer" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/30 hover:bg-white/50 p-2 rounded-full transition-all focus:outline-none"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/30 hover:bg-white/50 p-2 rounded-full transition-all focus:outline-none cursor-pointer"
         aria-label="Next slide"
       >
         <ArrowRight className="h-6 w-6 text-white cursor-pointer" />
@@ -112,7 +112,7 @@ export function ImageSlider({
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all focus:outline-none ${
+            className={`cursor-pointer w-3 h-3 rounded-full transition-all focus:outline-none ${
               currentSlide === index ? "bg-white w-8" : "bg-white/50"
             }`}
             aria-label={`Go to slide ${index + 1}`}

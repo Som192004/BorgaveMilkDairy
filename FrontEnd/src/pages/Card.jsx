@@ -57,7 +57,7 @@ export const Card = ({ product }) => {
             <motion.button
               onClick={onAddToCart}
               whileTap={{ scale: 0.95 }}
-              className="w-full flex items-center justify-center bg-blue-600 text-white font-semibold py-2 rounded hover:bg-blue-700 transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50"
+              className="w-full flex items-center justify-center bg-blue-600 text-white font-semibold py-2 rounded hover:bg-blue-700 transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50 cursor-pointer"
               aria-label={`Add ${product.name} to Cart`}
             >
               {added ? (

@@ -39,7 +39,7 @@ export const LanguageToggler = ({ isMobile = false }) => {
         {/* English Button */}
         <button
           onClick={() => handleChangeLanguage("en")}
-          className={`relative z-10 flex items-center justify-center rounded-full font-medium transition-colors duration-300 ${buttonClasses} ${
+          className={`cursor-pointer relative z-10 flex items-center justify-center rounded-full font-medium transition-colors duration-300 ${buttonClasses} ${
             i18n.language === "en"
               ? "text-white"
               : "text-gray-600 hover:text-gray-900"
@@ -51,7 +51,7 @@ export const LanguageToggler = ({ isMobile = false }) => {
         {/* Marathi Button */}
         <button
           onClick={() => handleChangeLanguage("mr")}
-          className={`relative z-10 flex items-center justify-center rounded-full font-medium transition-colors duration-300 ${buttonClasses} ${
+          className={`cursor-pointer relative z-10 flex items-center justify-center rounded-full font-medium transition-colors duration-300 ${buttonClasses} ${
             i18n.language === "mr"
               ? "text-white"
               : "text-gray-600 hover:text-gray-900"

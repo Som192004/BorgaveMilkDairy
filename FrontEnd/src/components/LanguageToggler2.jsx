@@ -81,7 +81,7 @@ export const LanguageToggler2 = ({ isMobile = false }) => {
           />
           <button
             onClick={handleToggleLanguage}
-            className={`relative z-10 flex items-center justify-center rounded-full font-medium transition-colors duration-300 ${buttonClasses} ${
+            className={`cursor-pointer relative z-10 flex items-center justify-center rounded-full font-medium transition-colors duration-300 ${buttonClasses} ${
               currentLang === "en"
                 ? "text-white"
                 : "text-gray-600 hover:text-gray-900"
@@ -92,7 +92,7 @@ export const LanguageToggler2 = ({ isMobile = false }) => {
           </button>
           <button
             onClick={handleToggleLanguage}
-            className={`relative z-10 flex items-center justify-center rounded-full font-medium transition-colors duration-300 ${buttonClasses} ${
+            className={`cursor-pointer relative z-10 flex items-center justify-center rounded-full font-medium transition-colors duration-300 ${buttonClasses} ${
               currentLang === "mr"
                 ? "text-white"
                 : "text-gray-600 hover:text-gray-900"

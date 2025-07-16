@@ -66,7 +66,7 @@ export const SubAdminCard = ({ subAdmin, onEdit, onDelete }) => {
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="ml-3 text-gray-500 hover:text-gray-700 transition-colors focus:outline-none"
+            className="ml-3 text-gray-500 hover:text-gray-700 transition-colors focus:outline-none cursor-pointer"
             aria-label={t("subAdmin.card.togglePassword")}
           >
             {showPassword ? <EyeOff size={22} /> : <Eye size={22} />}
@@ -93,14 +93,14 @@ export const SubAdminCard = ({ subAdmin, onEdit, onDelete }) => {
       <div className="mt-4 flex justify-between space-x-4 w-full">
         <button
           onClick={() => onEdit(subAdmin.id)}
-          className="flex-1 bg-blue-600 text-white text-base px-4 py-2 rounded-lg shadow-md hover:bg-blue-500 hover:shadow-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="flex-1 bg-blue-600 text-white text-base px-4 py-2 rounded-lg shadow-md hover:bg-blue-500 hover:shadow-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 cursor-pointer"
           aria-label={t("subAdmin.buttons.edit")}
         >
           {t("subAdmin.buttons.edit")}
         </button>
         <button
           onClick={() => onDelete(subAdmin.id)}
-          className="flex-1 bg-red-600 text-white text-base px-4 py-2 rounded-lg shadow-md hover:bg-red-500 hover:shadow-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-400"
+          className="flex-1 bg-red-600 text-white text-base px-4 py-2 rounded-lg shadow-md hover:bg-red-500 hover:shadow-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-400 cursor-pointer"
           aria-label={t("subAdmin.buttons.delete")}
         >
           {t("subAdmin.buttons.delete")}

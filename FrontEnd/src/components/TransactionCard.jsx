@@ -80,14 +80,14 @@ export const TransactionCard = ({
       <div className="mt-4 flex justify-end space-x-2 w-full">
         <button
           onClick={() => onEdit(transaction._id)}
-          className="bg-[#4c76ba] text-white text-sm sm:text-lg px-3 py-1 rounded-lg shadow-md hover:bg-blue-600 hover:shadow-xl transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="bg-[#4c76ba] text-white text-sm sm:text-lg px-3 py-1 rounded-lg shadow-md hover:bg-blue-600 hover:shadow-xl transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
           aria-label="Edit transaction"
         >
           Edit
         </button>
         <button
           onClick={() => onDelete(transaction._id)}
-          className="bg-[#d9534f] text-white text-sm sm:text-lg px-3 py-1 rounded-lg shadow-md hover:bg-red-600 hover:shadow-xl transition duration-200 focus:outline-none focus:ring-2 focus:ring-red-500"
+          className="bg-[#d9534f] text-white text-sm sm:text-lg px-3 py-1 rounded-lg shadow-md hover:bg-red-600 hover:shadow-xl transition duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 cursor-pointer"
           aria-label="Delete transaction"
         >
           Delete

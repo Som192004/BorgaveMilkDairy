@@ -254,7 +254,7 @@ export const BranchList = () => {
           setIsEditing(false);
           setFormData({ branchId: "", address: "", villageCity: "" });
         }}
-        className="fixed bottom-6 right-6 bg-[#2c447f] text-white px-6 py-3 rounded-full shadow-lg hover:bg-[#1b2d5b] transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2c447f]"
+        className="fixed bottom-6 right-6 bg-[#2c447f] text-white px-6 py-3 rounded-full shadow-lg hover:bg-[#1b2d5b] transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2c447f] cursor-pointer"
         aria-label={t("branch.buttons.addBranch")}
       >
         {t("branch.buttons.addBranch")}
@@ -282,7 +282,7 @@ export const BranchList = () => {
                 </h3>
                 <button
                   onClick={() => setIsFormOpen(false)}
-                  className="text-gray-600 hover:text-gray-800 focus:outline-none"
+                  className="text-gray-600 hover:text-gray-800 focus:outline-none cursor-pointer"
                   aria-label="Close Modal"
                 >
                   <svg
@@ -329,7 +329,7 @@ export const BranchList = () => {
             <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md relative">
               <button
                 onClick={() => setShowConfirm(false)}
-                className="absolute top-2 right-2 text-gray-600 hover:text-gray-800 focus:outline-none"
+                className="absolute top-2 right-2 text-gray-600 hover:text-gray-800 focus:outline-none cursor-pointer"
                 aria-label="Close Confirmation"
               >
                 <svg
@@ -356,13 +356,13 @@ export const BranchList = () => {
               <div className="flex justify-between mt-6 space-x-4">
                 <button
                   onClick={() => setShowConfirm(false)}
-                  className="flex-1 bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition duration-200 focus:outline-none"
+                  className="flex-1 bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition duration-200 focus:outline-none cursor-pointer"
                 >
                   {t("branch.alerts.no")}
                 </button>
                 <button
                   onClick={handleDelete}
-                  className="flex-1 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition duration-200 focus:outline-none"
+                  className="flex-1 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition duration-200 focus:outline-none cursor-pointer"
                 >
                   {t("branch.alerts.yes")}
                 </button>

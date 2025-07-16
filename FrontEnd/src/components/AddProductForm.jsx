@@ -111,7 +111,7 @@ export const AddProductForm = ({
           </h3>
           <button
             onClick={onClose}
-            className="text-gray-600 hover:text-gray-800 focus:outline-none"
+            className="text-gray-600 hover:text-gray-800 focus:outline-none cursor-pointer"
             aria-label="Close form"
           >
             <svg
@@ -226,13 +226,13 @@ export const AddProductForm = ({
               <button
                 type="button"
                 onClick={onClose}
-                className="flex-1 bg-gray-500 hover:bg-gray-600 text-white py-2 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                className="flex-1 bg-gray-500 hover:bg-gray-600 text-white py-2 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 cursor-pointer"
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 cursor-pointer"
               >
                 {msgOnBtn}
               </button>

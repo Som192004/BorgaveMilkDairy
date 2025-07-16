@@ -33,7 +33,7 @@ export const BranchCard = ({ branch, onEdit, onDelete }) => {
           whileTap={{ scale: 0.97 }}
           onClick={() => onEdit(branch.branchId)}
           aria-label={t("branch.buttons.edit")}
-          className="flex-1 bg-blue-600 text-white text-lg font-medium px-4 py-2 rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="flex-1 bg-blue-600 text-white text-lg font-medium px-4 py-2 rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
         >
           {t("branch.buttons.edit")}
         </motion.button>
@@ -42,7 +42,7 @@ export const BranchCard = ({ branch, onEdit, onDelete }) => {
           whileTap={{ scale: 0.97 }}
           onClick={() => onDelete(branch.branchId)}
           aria-label={t("branch.buttons.delete")}
-          className="flex-1 bg-red-600 text-white text-lg font-medium px-4 py-2 rounded-lg shadow-md hover:bg-red-700 hover:shadow-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500"
+          className="flex-1 bg-red-600 text-white text-lg font-medium px-4 py-2 rounded-lg shadow-md hover:bg-red-700 hover:shadow-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 cursor-pointer"
         >
           {t("branch.buttons.delete")}
         </motion.button>

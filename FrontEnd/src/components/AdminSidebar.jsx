@@ -94,7 +94,7 @@ export const AdminSidebar = ({ isOpen, setSidebarOpen, admin }) => {
             ))}
             <li className="relative">
               <button
-                className="w-full px-4 py-2 rounded-lg bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 transition flex justify-between items-center"
+                className="w-full px-4 py-2 rounded-lg bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 transition flex justify-between items-center cursor-pointer"
                 onClick={() => setShowReports((prev) => !prev)}
                 aria-expanded={showReports}
                 aria-controls="reports-dropdown"
@@ -115,7 +115,7 @@ export const AdminSidebar = ({ isOpen, setSidebarOpen, admin }) => {
                     {["daily", "weekly", "monthly"].map((type) => (
                       <button
                         key={type}
-                        className="w-full text-left px-4 py-2 text-blue-900 hover:bg-blue-50 transition-all duration-200"
+                        className="w-full text-left px-4 py-2 text-blue-900 hover:bg-blue-50 transition-all duration-200 cursor-pointer"
                         onClick={() => handleReportSelection(type)}
                       >
                         {t(`adminSidebar.reports.${type}`)}
@@ -156,14 +156,14 @@ export const AdminSidebar = ({ isOpen, setSidebarOpen, admin }) => {
           </div>
           <button
             onClick={handleLogout}
-            className="w-full mt-3 px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg shadow-md transition duration-200"
+            className="w-full mt-3 px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg shadow-md transition duration-200 cursor-pointer"
           >
             {t("adminSidebar.buttons.logout")}
           </button>
         </div>
       </div>
       <button
-        className="lg:hidden mt-4 p-2 bg-blue-600 hover:bg-blue-700 rounded text-white transition flex items-center justify-center"
+        className="lg:hidden mt-4 p-2 bg-blue-600 hover:bg-blue-700 rounded text-white transition flex items-center justify-center cursor-pointer"
         onClick={() => setSidebarOpen(false)}
         aria-label={t("adminSidebar.buttons.close")}
       >

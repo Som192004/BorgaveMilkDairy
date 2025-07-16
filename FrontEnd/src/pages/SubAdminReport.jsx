@@ -65,7 +65,7 @@ export const SubAdminReport = () => {
       </h2>
       <div className="flex space-x-4 mb-6">
         <button
-          className={`py-2 px-4 rounded-lg ${
+          className={`cursor-pointer py-2 px-4 rounded-lg ${
             activeTab === "farmerCombinedReport"
               ? "bg-blue-600 text-white"
               : "bg-gray-200 text-gray-800"
@@ -76,7 +76,7 @@ export const SubAdminReport = () => {
         </button>
 
         <button
-          className={`py-2 px-4 rounded-lg ${
+          className={`cursor-pointer py-2 px-4 rounded-lg ${
             activeTab === "allfarmersCombinedReport"
               ? "bg-blue-600 text-white"
               : "bg-gray-200 text-gray-800"
@@ -87,7 +87,7 @@ export const SubAdminReport = () => {
         </button>
 
         <button
-          className={`py-2 px-4 rounded-lg ${
+          className={`cursor-pointer py-2 px-4 rounded-lg ${
             activeTab === "farmersLoan"
               ? "bg-blue-600 text-white"
               : "bg-gray-200 text-gray-800"
@@ -97,7 +97,7 @@ export const SubAdminReport = () => {
           Farmers' Loan Report
         </button>
         <button
-          className={`py-2 px-4 rounded-lg ${
+          className={`cursor-pointer py-2 px-4 rounded-lg ${
             activeTab === "loanByMobile"
               ? "bg-green-600 text-white"
               : "bg-gray-200 text-gray-800"
@@ -107,7 +107,7 @@ export const SubAdminReport = () => {
           Loan Report by Farmer ID
         </button>
         <button
-          className={`py-2 px-4 rounded-lg ${
+          className={`cursor-pointer py-2 px-4 rounded-lg ${
             activeTab === "farmersTransaction"
               ? "bg-purple-600 text-white"
               : "bg-gray-200 text-gray-800"
@@ -117,7 +117,7 @@ export const SubAdminReport = () => {
           Farmers' Transaction Report
         </button>
         <button
-          className={`py-2 px-4 rounded-lg ${
+          className={`cursor-pointer py-2 px-4 rounded-lg ${
             activeTab === "transactionByMobile"
               ? "bg-red-600 text-white"
               : "bg-gray-200 text-gray-800"
@@ -127,7 +127,7 @@ export const SubAdminReport = () => {
           Transaction Report by Farmer ID
         </button>
         <button
-          className={`py-2 px-4 rounded-lg ${
+          className={`cursor-pointer py-2 px-4 rounded-lg ${
             activeTab === "productTransaction"
               ? "bg-black text-white"
               : "bg-gray-200 text-gray-800"
@@ -184,7 +184,7 @@ export const SubAdminReport = () => {
                 `$all_Farmers_Combined_Report.pdf`
               )
             }
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 shadow-md"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 shadow-md cursor-pointer"
             disabled={loading}
           >
             {loading
@@ -214,7 +214,7 @@ export const SubAdminReport = () => {
                 `${farmerID}_Farmer_Combined_Report.pdf` // Updated variable name
               )
             }
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 shadow-md"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 shadow-md cursor-pointer"
             disabled={loading}
           >
             {loading ? "Downloading..." : "Download Farmers' Combined Report"}
@@ -238,7 +238,7 @@ export const SubAdminReport = () => {
                 alert("Please select a valid date range");
               }
             }}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 shadow-md"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 shadow-md cursor-pointer"
             disabled={loading}
           >
             {loading ? "Downloading..." : "Download Farmers' Loan Report"}
@@ -270,7 +270,7 @@ export const SubAdminReport = () => {
                 alert("Please enter a Farmer ID");
               }
             }}
-            className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 shadow-md"
+            className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 shadow-md cursor-pointer"
             disabled={loading}
           >
             {loading ? "Downloading..." : "Download Loan Report by Farmer ID"}
@@ -290,7 +290,7 @@ export const SubAdminReport = () => {
                 "Farmers_Transaction_Report.pdf"
               )
             }
-            className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 shadow-md"
+            className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 shadow-md cursor-pointer"
             disabled={loading}
           >
             {loading
@@ -324,7 +324,7 @@ export const SubAdminReport = () => {
                 alert("Please enter a Farmer ID");
               }
             }}
-            className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 shadow-md"
+            className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 shadow-md cursor-pointer"
             disabled={loading}
           >
             {loading
@@ -359,7 +359,7 @@ export const SubAdminReport = () => {
                 `${startDate}_${endDate}_Product_Transaction_Report.pdf`
               )
             }
-            className="w-full bg-black hover:bg-black-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 shadow-md"
+            className="w-full bg-black hover:bg-black-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 shadow-md cursor-pointer"
             disabled={loading}
           >
             {loading ? "Downloading..." : "Download Product Transaction Report"}

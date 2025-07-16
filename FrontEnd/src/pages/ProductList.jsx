@@ -173,7 +173,7 @@ export const ProductList = () => {
                   <button
                     key={category.id}
                     onClick={() => setSelectedCategory(category.id)}
-                    className={`px-3 py-2 text-sm sm:text-base rounded-lg font-medium ${
+                    className={`cursor-pointer px-3 py-2 text-sm sm:text-base rounded-lg font-medium ${
                       selectedCategory === category.id
                         ? "bg-blue-600 text-white"
                         : "bg-gray-200 text-gray-700"

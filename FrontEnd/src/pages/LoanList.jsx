@@ -207,21 +207,21 @@ const LoanList = () => {
                     <td className="px-4 py-3 text-center space-x-2">
                       <button
                         onClick={() => handleEdit(loan)}
-                        className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-1 px-3 rounded transition duration-150 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                        className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-1 px-3 rounded transition duration-150 focus:outline-none focus:ring-2 focus:ring-yellow-400 cursor-pointer"
                         aria-label={`Edit loan for ${loan.farmerName}`}
                       >
                         Edit
                       </button>
                       <button
                         onClick={() => openDeductModal(loan)}
-                        className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-1 px-3 rounded transition duration-150 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-1 px-3 rounded transition duration-150 focus:outline-none focus:ring-2 focus:ring-blue-400 cursor-pointer"
                         aria-label={`Deduct loan for ${loan.farmerName}`}
                       >
                         Deduct Loan
                       </button>
                       <button
                         onClick={() => openDeleteModal(loan)}
-                        className="bg-red-500 hover:bg-red-600 text-white font-semibold py-1 px-3 rounded transition duration-150 focus:outline-none focus:ring-2 focus:ring-red-400"
+                        className="bg-red-500 hover:bg-red-600 text-white font-semibold py-1 px-3 rounded transition duration-150 focus:outline-none focus:ring-2 focus:ring-red-400 cursor-pointer"
                         aria-label={`Delete loan for ${loan.farmerName}`}
                       >
                         Delete
@@ -247,7 +247,7 @@ const LoanList = () => {
           setIsFormOpen(true);
           setEditingLoan(null);
         }}
-        className="fixed bottom-6 right-6 bg-[#2c447f] text-white px-6 py-3 rounded-full shadow-lg hover:bg-[#1b2d5b] transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-600"
+        className="fixed bottom-6 right-6 bg-[#2c447f] text-white px-6 py-3 rounded-full shadow-lg hover:bg-[#1b2d5b] transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-600 cursor-pointer"
         aria-label="Add new loan"
       >
         + Add Loan
@@ -304,13 +304,13 @@ const LoanList = () => {
               <div className="flex justify-around">
                 <button
                   onClick={() => setIsDeleteModalOpen(false)}
-                  className="bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded-md transition focus:outline-none focus:ring-2 focus:ring-gray-500"
+                  className="bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded-md transition focus:outline-none focus:ring-2 focus:ring-gray-500 cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={() => handleDeleteConfirmed(loanToDelete.id)}
-                  className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md transition focus:outline-none focus:ring-2 focus:ring-red-500"
+                  className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md transition focus:outline-none focus:ring-2 focus:ring-red-500 cursor-pointer"
                 >
                   Delete
                 </button>
@@ -366,13 +366,13 @@ const LoanList = () => {
                   <button
                     type="button"
                     onClick={() => setIsDeductModalOpen(false)}
-                    className="bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded-md transition focus:outline-none focus:ring-2 focus:ring-gray-500"
+                    className="bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded-md transition focus:outline-none focus:ring-2 focus:ring-gray-500 cursor-pointer"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
-                    className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
                     onClick={handleDeductSubmit}
                   >
                     Confirm Deduction

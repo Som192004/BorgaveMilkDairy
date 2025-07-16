@@ -36,7 +36,7 @@ export const ProductDetails = () => {
     <div className="max-w-4xl mx-auto p-6 md:p-8 bg-white rounded-xl shadow-lg my-12 border border-gray-200">
       <button
         onClick={handleBackClick}
-        className="flex items-center space-x-2 bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-lg mb-6 transition duration-300"
+        className="flex items-center space-x-2 bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-lg mb-6 transition duration-300 cursor-pointer"
       >
         <span className="text-lg">&#8592;</span>
         <span>Back to Products</span>

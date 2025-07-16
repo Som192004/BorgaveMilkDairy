@@ -205,13 +205,13 @@ export const FarmerList = () => {
                   <td className="px-4 py-3 text-center">
                     <button
                       onClick={() => handleEdit(farmer)}
-                      className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-1 px-3 rounded mr-2 transition duration-150"
+                      className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-1 px-3 rounded mr-2 transition duration-150 cursor-pointer"
                     >
                       Edit
                     </button>
                     <button
                       onClick={() => openDeleteModal(farmer)}
-                      className="bg-red-500 hover:bg-red-600 text-white font-semibold py-1 px-3 rounded transition duration-150"
+                      className="bg-red-500 hover:bg-red-600 text-white font-semibold py-1 px-3 rounded transition duration-150 cursor-pointer"
                     >
                       Delete
                     </button>
@@ -235,7 +235,7 @@ export const FarmerList = () => {
           setIsFormOpen(true);
           setEditingFarmer(null);
         }}
-        className="fixed bottom-6 right-6 bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-full shadow-lg transition duration-200"
+        className="fixed bottom-6 right-6 bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-full shadow-lg transition duration-200 cursor-pointer"
       >
         + Add Farmer
       </button>
@@ -285,13 +285,13 @@ export const FarmerList = () => {
               <div className="flex justify-around">
                 <button
                   onClick={() => setDeleteModalOpen(false)}
-                  className="bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded-md transition"
+                  className="bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded-md transition cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={() => handleDelete(farmerToDelete._id)}
-                  className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md transition"
+                  className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md transition cursor-pointer"
                 >
                   Delete
                 </button>

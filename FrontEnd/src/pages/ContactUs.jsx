@@ -563,7 +563,7 @@ export const ContactUs = () => {
                     type="button"
                     onClick={sendOtp}
                     disabled={loading}
-                    className="w-full bg-blue-500 text-white py-3 rounded-lg"
+                    className="w-full bg-blue-500 text-white py-3 rounded-lg cursor-pointer"
                   >
                     {loading ? "Sending OTP..." : t("contactUs.form.sendOtp")}
                   </button>
@@ -581,7 +581,7 @@ export const ContactUs = () => {
                         <button
                           type="button"
                           onClick={verifyOtp}
-                          className="w-full bg-blue-500 text-white py-3 rounded-lg"
+                          className="w-full bg-blue-500 text-white py-3 rounded-lg cursor-pointer"
                         >
                           {t("contactUs.form.verifyOtp")} ({timer}s)
                         </button>
@@ -590,7 +590,7 @@ export const ContactUs = () => {
                       <button
                         type="button"
                         onClick={sendOtp}
-                        className="w-full bg-red-500 text-white py-3 rounded-lg"
+                        className="w-full bg-red-500 text-white py-3 rounded-lg cursor-pointer"
                       >
                         Resend OTP
                       </button>

@@ -152,7 +152,7 @@ export const Cart = () => {
                     <div className="flex items-center space-x-3 mt-2">
                       <button
                         onClick={() => decreaseQuantity(item._id)}
-                        className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-3 py-1 rounded-lg"
+                        className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-3 py-1 rounded-lg cursor-pointer"
                       >
                         -
                       </button>
@@ -161,7 +161,7 @@ export const Cart = () => {
                       </span>
                       <button
                         onClick={() => increaseQuantity(item._id)}
-                        className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-3 py-1 rounded-lg"
+                        className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-3 py-1 rounded-lg cursor-pointer"
                       >
                         +
                       </button>
@@ -170,7 +170,7 @@ export const Cart = () => {
                 </div>
                 <button
                   onClick={() => removeFromCart(item._id)}
-                  className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg shadow-sm transition-all duration-300"
+                  className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg shadow-sm transition-all duration-300 cursor-pointer"
                 >
                   Remove
                 </button>
@@ -180,7 +180,7 @@ export const Cart = () => {
           <div className="text-center">
             <button
               onClick={handleEnquireClick}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md cursor-pointer"
             >
               Proceed to Enquiry
             </button>

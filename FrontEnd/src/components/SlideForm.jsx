@@ -48,7 +48,7 @@ export const SlideForm = ({
         {/* Close Icon */}
         <button
           onClick={() => setIsFormOpen(false)}
-          className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors focus:outline-none"
+          className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors focus:outline-none cursor-pointer"
           aria-label="Close form"
         >
           <X className="h-6 w-6" />
@@ -89,7 +89,7 @@ export const SlideForm = ({
                 <button
                   type="button"
                   onClick={handleRemoveImage}
-                  className="absolute top-2 right-2 bg-white rounded-full p-1 shadow-md hover:bg-gray-200 transition"
+                  className="absolute top-2 right-2 bg-white rounded-full p-1 shadow-md hover:bg-gray-200 transition cursor-pointer"
                   aria-label="Remove image"
                 >
                   <XCircle className="h-6 w-6 text-red-500" />
@@ -141,13 +141,13 @@ export const SlideForm = ({
             <button
               type="button"
               onClick={() => setIsFormOpen(false)}
-              className="flex-1 bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded-lg transition duration-200 focus:outline-none"
+              className="flex-1 bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded-lg transition duration-200 focus:outline-none cursor-pointer"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="flex-1 bg-[#2c447f] hover:bg-[#1b2d5b] text-white px-4 py-2 rounded-lg transition duration-200 focus:outline-none"
+              className="flex-1 bg-[#2c447f] hover:bg-[#1b2d5b] text-white px-4 py-2 rounded-lg transition duration-200 focus:outline-none cursor-pointer"
             >
               {isEditing ? "Update" : "Save"}
             </button>

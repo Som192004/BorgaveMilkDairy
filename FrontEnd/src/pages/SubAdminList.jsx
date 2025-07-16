@@ -238,7 +238,7 @@ export const SubAdminList = () => {
               branchId: "",
             });
           }}
-          className="fixed bottom-6 right-6 bg-[#2c447f] text-white px-6 py-3 rounded-full shadow-lg hover:bg-[#1b2d5b] transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-600"
+          className="fixed bottom-6 right-6 bg-[#2c447f] text-white px-6 py-3 rounded-full shadow-lg hover:bg-[#1b2d5b] transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-600 cursor-pointer"
         >
           Add Sub-Admin
         </button>
@@ -295,13 +295,13 @@ export const SubAdminList = () => {
                 <div className="flex justify-between gap-4">
                   <button
                     onClick={() => setShowConfirm(false)}
-                    className="flex-1 bg-[#4c76ba] text-white px-4 py-2 rounded-lg hover:bg-gray-500 transition duration-150"
+                    className="flex-1 bg-[#4c76ba] text-white px-4 py-2 rounded-lg hover:bg-gray-500 transition duration-150 cursor-pointer"
                   >
                     Cancel
                   </button>
                   <button
                     onClick={handleDelete}
-                    className="flex-1 bg-[#d9534f] text-white px-4 py-2 rounded-lg hover:bg-red-700 transition duration-150"
+                    className="flex-1 bg-[#d9534f] text-white px-4 py-2 rounded-lg hover:bg-red-700 transition duration-150 cursor-pointer"
                   >
                     Delete
                   </button>

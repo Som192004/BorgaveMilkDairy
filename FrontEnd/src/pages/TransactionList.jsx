@@ -251,7 +251,7 @@ const TransactionList = () => {
                                 <div className="flex justify-center space-x-2">
                                   <button
                                     onClick={() => handleEdit(transaction)}
-                                    className="bg-yellow-500 text-white px-2 sm:px-3 py-1 rounded-md hover:bg-yellow-600 transition"
+                                    className="bg-yellow-500 text-white px-2 sm:px-3 py-1 rounded-md hover:bg-yellow-600 transition cursor-pointer"
                                   >
                                     Edit
                                   </button>
@@ -259,7 +259,7 @@ const TransactionList = () => {
                                     onClick={() =>
                                       handleDelete(transaction._id)
                                     }
-                                    className="bg-red-500 text-white px-2 sm:px-3 py-1 rounded-md hover:bg-red-600 transition"
+                                    className="bg-red-500 text-white px-2 sm:px-3 py-1 rounded-md hover:bg-red-600 transition cursor-pointer"
                                   >
                                     Delete
                                   </button>
@@ -292,7 +292,7 @@ const TransactionList = () => {
             setIsFormOpen(true);
             setEditingTransaction(null);
           }}
-          className="fixed bottom-6 right-6 bg-[#2c447f] text-white px-6 py-3 rounded-full shadow-lg hover:bg-[#1b2d5b] transition transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-600"
+          className="fixed bottom-6 right-6 bg-[#2c447f] text-white px-6 py-3 rounded-full shadow-lg hover:bg-[#1b2d5b] transition transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-600 cursor-pointer"
         >
           + Add Transaction
         </button>

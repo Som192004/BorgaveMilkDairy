@@ -219,9 +219,9 @@ const OnlineOrders = () => {
                 {/* <div className="mt-4 text-right text-lg font-semibold text-gray-800">
                   Total: ₹{order.totalAmount}
                 </div> */}
-                <div className="mt-4 flex justify-between">
+                <div className="mt-4 flex justify-center" >
                   {
-                    order.isOrderdPlaced ? <>Order Placed</> : <button className="px-4 py-2 bg-green-500 text-white rounded-md shadow-md hover:bg-green-600 transition" onClick={() => handleOrder(order._id)}>
+                    order.isOrderdPlaced ? <span className="text-green-600 font-semibold">✅ Order Successfully Placed</span> : <button className="px-4 py-2 bg-green-500 text-white rounded-md shadow-md hover:bg-green-600 transition cursor-pointer" onClick={() => handleOrder(order._id)}>
                     Place Order
                   </button>
                   }

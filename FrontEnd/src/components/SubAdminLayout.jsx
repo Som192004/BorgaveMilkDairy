@@ -51,7 +51,7 @@ export const SubAdminLayout = () => {
       {/* Mobile Hamburger Menu */}
       <button
         onClick={() => setSidebarOpen(!isSidebarOpen)}
-        className="absolute top-4 left-4 z-50 p-2 bg-gray-800 text-white rounded-md lg:hidden focus:outline-none focus:ring-2 focus:ring-gray-600"
+        className="absolute top-4 left-4 z-50 p-2 bg-gray-800 text-white rounded-md lg:hidden focus:outline-none focus:ring-2 focus:ring-gray-600 cursor-pointer"
         aria-label="Toggle sidebar"
       >
         <Menu size={24} />

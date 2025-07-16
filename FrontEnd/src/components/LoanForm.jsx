@@ -128,7 +128,7 @@ const LoanForm = ({
           </h3>
           <button
             onClick={() => setIsFormOpen(false)}
-            className="text-gray-400 hover:text-gray-600 focus:outline-none"
+            className="text-gray-400 hover:text-gray-600 focus:outline-none cursor-pointer"
             aria-label="Close form"
           >
             <svg
@@ -253,13 +253,13 @@ const LoanForm = ({
               <button
                 type="button"
                 onClick={() => setIsFormOpen(false)}
-                className="flex-1 bg-gray-400 hover:bg-gray-500 text-white px-3 sm:px-4 py-2 rounded-lg transition duration-200 focus:outline-none"
+                className="flex-1 bg-gray-400 hover:bg-gray-500 text-white px-3 sm:px-4 py-2 rounded-lg transition duration-200 focus:outline-none cursor-pointer"
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="flex-1 bg-[#2c447f] hover:bg-[#1b2d5b] text-white px-3 sm:px-4 py-2 rounded-lg transition duration-200 focus:outline-none"
+                className="flex-1 bg-[#2c447f] hover:bg-[#1b2d5b] text-white px-3 sm:px-4 py-2 rounded-lg transition duration-200 focus:outline-none cursor-pointer"
               >
                 {isEditing ? "Update" : "Add"} Loan
               </button>

@@ -80,7 +80,7 @@ export const AddProductCard = ({
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={onEdit}
-              className="flex items-center bg-blue-600 text-white py-2 px-4 rounded-md transition-all hover:bg-blue-700 text-sm"
+              className="flex items-center bg-blue-600 text-white py-2 px-4 rounded-md transition-all hover:bg-blue-700 text-sm cursor-pointer"
             >
               <Edit size={16} className="mr-1" /> Edit
             </motion.button>
@@ -88,7 +88,7 @@ export const AddProductCard = ({
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={onDelete}
-              className="flex items-center bg-red-500 text-white py-2 px-4 rounded-md transition-all hover:bg-red-600 text-sm"
+              className="flex items-center bg-red-500 text-white py-2 px-4 rounded-md transition-all hover:bg-red-600 text-sm cursor-pointer"
             >
               <Trash2 size={16} className="mr-1" /> Delete
             </motion.button>
@@ -111,7 +111,7 @@ export const AddProductCard = ({
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => handleStockUpdate("add")}
-              className="flex items-center bg-green-600 text-white py-2 px-4 rounded-md transition-all hover:bg-green-700 text-sm"
+              className="flex items-center bg-green-600 text-white py-2 px-4 rounded-md transition-all hover:bg-green-700 text-sm cursor-pointer"
             >
               <Plus size={16} className="mr-1" /> Add
             </motion.button>
@@ -119,7 +119,7 @@ export const AddProductCard = ({
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => handleStockUpdate("subtract")}
-              className="flex items-center bg-yellow-500 text-white py-2 px-4 rounded-md transition-all hover:bg-yellow-600 text-sm"
+              className="flex items-center bg-yellow-500 text-white py-2 px-4 rounded-md transition-all hover:bg-yellow-600 text-sm cursor-pointer"
             >
               <Minus size={16} className="mr-1" /> Subtract
             </motion.button>

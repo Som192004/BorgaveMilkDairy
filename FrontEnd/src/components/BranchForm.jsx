@@ -34,7 +34,7 @@ export const BranchForm = ({
         {/* Close Button */}
         <button
           onClick={() => setIsFormOpen(false)}
-          className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 focus:outline-none"
+          className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 focus:outline-none cursor-pointer"
           aria-label={t("branch.form.cancel")}
         >
           <svg
@@ -117,7 +117,7 @@ export const BranchForm = ({
             whileTap={{ scale: 0.97 }}
             type="button"
             onClick={() => setIsFormOpen(false)}
-            className="flex-1 bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400"
+            className="flex-1 bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 cursor-pointer"
           >
             {t("branch.form.cancel")}
           </motion.button>
@@ -126,7 +126,7 @@ export const BranchForm = ({
             whileTap={{ scale: 0.97 }}
             type="button"
             onClick={handleSaveBranch}
-            className="flex-1 bg-[#2c447f] hover:bg-[#1b2d5b] text-white px-4 py-2 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-[#2c447f]"
+            className="flex-1 bg-[#2c447f] hover:bg-[#1b2d5b] text-white px-4 py-2 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-[#2c447f] cursor-pointer"
           >
             {t("branch.form.save")}
           </motion.button>

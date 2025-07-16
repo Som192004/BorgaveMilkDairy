@@ -39,7 +39,7 @@ export const AdminLayout = () => {
     <div className="flex h-screen bg-gray-50">
       {/* Mobile Hamburger Menu */}
       <button
-        className="absolute top-4 left-4 z-50 p-2 bg-blue-700 text-white rounded-md lg:hidden focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="absolute top-4 left-4 z-50 p-2 bg-blue-700 text-white rounded-md lg:hidden focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
         onClick={() => setSidebarOpen((prev) => !prev)}
         aria-label="Open sidebar menu"
       >

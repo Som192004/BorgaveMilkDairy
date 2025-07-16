@@ -163,14 +163,14 @@ export const ProductCard = ({ product, selectedBranch, categoryId, setGlobalErro
         <div className="flex flex-col sm:flex-row sm:space-x-2 space-y-2 sm:space-y-0">
           <button
             onClick={handleClick}
-            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold text-xs sm:text-sm py-1 sm:py-2 px-3 rounded transition-colors duration-200"
+            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold text-xs sm:text-sm py-1 sm:py-2 px-3 rounded transition-colors duration-200 cursor-pointer"
           >
             {t("products.productCard.viewDetails")}
           </button>
 
           <button
             onClick={handleAddToCart}
-            className="w-full bg-green-500 hover:bg-green-600 text-white font-bold text-xs sm:text-sm py-1 sm:py-2 px-3 rounded transition-colors duration-200"
+            className="w-full bg-green-500 hover:bg-green-600 text-white font-bold text-xs sm:text-sm py-1 sm:py-2 px-3 rounded transition-colors duration-200 cursor-pointer"
           >
             Add to cart
           </button>

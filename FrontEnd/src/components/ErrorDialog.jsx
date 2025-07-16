@@ -30,7 +30,7 @@ export const ErrorDialog = ({ errors, onClose }) => {
         {/* Close Icon */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors focus:outline-none"
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors focus:outline-none cursor-pointer"
           aria-label="Close Error Dialog"
         >
           <svg
@@ -90,7 +90,7 @@ export const ErrorDialog = ({ errors, onClose }) => {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             onClick={onClose}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
           >
             Close
           </motion.button>

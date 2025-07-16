@@ -116,13 +116,13 @@ export const CategoryList = () => {
                   <div className="flex justify-between">
                     <button
                       onClick={(e) => handleEditCategory(cat, e)}
-                      className="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded-md transition duration-150"
+                      className="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded-md transition duration-150 cursor-pointer"
                     >
                       Edit
                     </button>
                     <button
                       onClick={(e) => handleDeleteCategory(cat._id, e)}
-                      className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md transition duration-150"
+                      className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md transition duration-150 cursor-pointer"
                     >
                       Delete
                     </button>
@@ -143,7 +143,7 @@ export const CategoryList = () => {
             setIsFormOpen(true);
             setEditingCategory(null);
           }}
-          className="fixed bottom-6 right-6 bg-[#2c447f] text-white px-6 py-3 rounded-full shadow-lg hover:bg-[#1b2d5b] transition transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-600"
+          className="fixed bottom-6 right-6 bg-[#2c447f] text-white px-6 py-3 rounded-full shadow-lg hover:bg-[#1b2d5b] transition transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-600 cursor-pointer"
         >
           + Add Category
         </button>
@@ -198,7 +198,7 @@ export const CategoryList = () => {
                 <div className="flex justify-center">
                   <button
                     onClick={() => setDetailCategory(null)}
-                    className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-150 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-150 focus:outline-none focus:ring-2 focus:ring-blue-400 cursor-pointer"
                   >
                     Close
                   </button>

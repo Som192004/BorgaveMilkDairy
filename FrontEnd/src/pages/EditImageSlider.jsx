@@ -255,13 +255,13 @@ export const EditImageSlider = () => {
                 <p className="text-sm text-gray-600">{slide.description}</p>
                 <div className="flex justify-between mt-4 space-x-2">
                   <button
-                    className="flex-1 bg-[#4c76ba] text-white text-base px-3 py-2 rounded-md shadow-md hover:bg-[#3b5c94] transition"
+                    className="flex-1 bg-[#4c76ba] text-white text-base px-3 py-2 rounded-md shadow-md hover:bg-[#3b5c94] transition cursor-pointer"
                     onClick={() => handleEditSlide(slide)}
                   >
                     {t("imageSlider.buttons.edit")}
                   </button>
                   <button
-                    className="flex-1 bg-[#d9534f] text-white text-base px-3 py-2 rounded-md shadow-md hover:bg-[#b52b27] transition"
+                    className="flex-1 bg-[#d9534f] text-white text-base px-3 py-2 rounded-md shadow-md hover:bg-[#b52b27] transition cursor-pointer"
                     onClick={() => confirmDelete(slide)}
                   >
                     {t("imageSlider.buttons.delete")}
@@ -284,7 +284,7 @@ export const EditImageSlider = () => {
 
       <button
         onClick={handleAddSlide}
-        className="mt-6 px-6 py-3 bg-[#1b2d5b] text-white font-semibold rounded-lg shadow-md hover:bg-[#0f1e3e] transition"
+        className="mt-6 px-6 py-3 bg-[#1b2d5b] text-white font-semibold rounded-lg shadow-md hover:bg-[#0f1e3e] transition cursor-pointer"
       >
         {t("imageSlider.buttons.addSlide")}
       </button>
@@ -335,13 +335,13 @@ export const EditImageSlider = () => {
               <div className="flex justify-around">
                 <button
                   onClick={() => setDeleteModalOpen(false)}
-                  className="bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded-md transition"
+                  className="bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded-md transition cursor-pointer"
                 >
                   {t("imageSlider.alerts.cancel")}
                 </button>
                 <button
                   onClick={() => handleDelete(slideToDelete._id)}
-                  className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md transition"
+                  className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md transition cursor-pointer"
                 >
                   {t("imageSlider.alerts.confirm")}
                 </button>

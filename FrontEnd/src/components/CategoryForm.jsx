@@ -138,14 +138,14 @@ export const CategoryForm = ({ onClose, onSuccess, editingCategory }) => {
           <button
             type="button"
             onClick={onClose}
-            className="px-4 py-2 bg-gray-300 text-gray-800 rounded hover:bg-gray-400 transition"
+            className="px-4 py-2 bg-gray-300 text-gray-800 rounded hover:bg-gray-400 transition cursor-pointer"
           >
             Cancel
           </button>
           <button
             type="submit"
             disabled={isSubmitting}
-            className={`px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition ${
+            className={`cursor-pointer px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition ${
               isSubmitting ? "opacity-50 cursor-not-allowed" : ""
             }`}
           >

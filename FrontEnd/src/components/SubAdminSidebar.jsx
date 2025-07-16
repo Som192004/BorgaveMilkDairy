@@ -127,7 +127,7 @@ export const SubAdminSidebar = ({ isOpen, setSidebarOpen, subAdmin }) => {
           </div>
           <button
             onClick={handleLogout}
-            className="w-full px-4 py-2 mt-2 bg-red-600 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 transition duration-200 focus:outline-none focus:ring-2 focus:ring-red-400"
+            className="w-full px-4 py-2 mt-2 bg-red-600 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 transition duration-200 focus:outline-none focus:ring-2 focus:ring-red-400 cursor-pointer"
           >
             {t("subAdminSidebar.buttons.logout")}
           </button>
@@ -136,7 +136,7 @@ export const SubAdminSidebar = ({ isOpen, setSidebarOpen, subAdmin }) => {
 
       {/* Mobile Close Button */}
       <button
-        className="lg:hidden mt-4 p-2 bg-gray-600 rounded text-white transition duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500"
+        className="lg:hidden mt-4 p-2 bg-gray-600 rounded text-white transition duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 cursor-pointer"
         onClick={() => setSidebarOpen(false)}
       >
         {t("subAdminSidebar.buttons.close")}
