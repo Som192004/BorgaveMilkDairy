@@ -54,6 +54,7 @@ and implemented role-based access controls for administrators.
 &nbsp;&nbsp;&nbsp;
 <img width="1366" height="768" alt="Image" src="https://github.com/user-attachments/assets/adb8ec57-8eb4-4916-aa94-59b562502d0d" />
 &nbsp;&nbsp;&nbsp;
+
 ## Normal User Module
 <img width="1366" height="768" alt="Screenshot (166)" src="https://github.com/user-attachments/assets/fd98870c-4218-4827-b3da-de5f97a43d2e" />
 &nbsp;&nbsp;&nbsp;
