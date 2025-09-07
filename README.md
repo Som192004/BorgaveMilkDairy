@@ -36,6 +36,3 @@ and implemented role-based access controls for administrators.
 <img width="1366" height="768" alt="Image" src="https://github.com/user-attachments/assets/4862092e-bb3b-4499-a28f-909eedcc4313" />
 <img width="1366" height="768" alt="Image" src="https://github.com/user-attachments/assets/23d9e56e-9c89-4183-9d69-2034bd9e3738" />
 <img width="1366" height="768" alt="Image" src="https://github.com/user-attachments/assets/adb8ec57-8eb4-4916-aa94-59b562502d0d" />
-<img width="689" height="431" alt="Image" src="https://github.com/user-attachments/assets/9537e2f2-7eaa-4824-962a-5694ed39c59b" />
-<img width="678" height="279" alt="Image" src="https://github.com/user-attachments/assets/94ec8caf-7f94-4bcf-8168-5d569c50ee08" />
-<img width="682" height="403" alt="Image" src="https://github.com/user-attachments/assets/de0afe7b-deb2-4c18-8ac3-c45c76dc4639" />
