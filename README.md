@@ -53,3 +53,24 @@ and implemented role-based access controls for administrators.
 <img width="1366" height="768" alt="Image" src="https://github.com/user-attachments/assets/23d9e56e-9c89-4183-9d69-2034bd9e3738" />
 &nbsp;&nbsp;&nbsp;
 <img width="1366" height="768" alt="Image" src="https://github.com/user-attachments/assets/adb8ec57-8eb4-4916-aa94-59b562502d0d" />
+&nbsp;&nbsp;&nbsp;
+## Normal User Module
+<img width="1366" height="768" alt="Screenshot (166)" src="https://github.com/user-attachments/assets/fd98870c-4218-4827-b3da-de5f97a43d2e" />
+&nbsp;&nbsp;&nbsp;
+<img width="1366" height="768" alt="Screenshot (167)" src="https://github.com/user-attachments/assets/3bd6e755-007b-4b9b-ab1c-0739fccd06dd" />
+&nbsp;&nbsp;&nbsp;
+<img width="1366" height="768" alt="Screenshot (168)" src="https://github.com/user-attachments/assets/56ce5f9b-d1b1-48d6-81c6-e0c4f478e1b4" />
+&nbsp;&nbsp;&nbsp;
+<img width="1366" height="768" alt="Screenshot (169)" src="https://github.com/user-attachments/assets/cedc3031-a341-4967-9a8e-6ccc008e1f41" />
+&nbsp;&nbsp;&nbsp;
+<img width="1366" height="768" alt="Screenshot (170)" src="https://github.com/user-attachments/assets/a10e4791-a5e9-432c-9ddb-c98246be3de0" />
+&nbsp;&nbsp;&nbsp;
+<img width="1366" height="768" alt="Screenshot (171)" src="https://github.com/user-attachments/assets/39856cdb-c0d0-4702-a126-04d8cff64d00" />
+&nbsp;&nbsp;&nbsp;
+<img width="1366" height="768" alt="Screenshot (172)" src="https://github.com/user-attachments/assets/0ec02fde-51ac-4083-af4c-60b2746115f9" />
+&nbsp;&nbsp;&nbsp;
+<img width="1366" height="768" alt="Screenshot (173)" src="https://github.com/user-attachments/assets/8fc57762-dc84-4ee6-ae4e-7978c2f852f9" />
+&nbsp;&nbsp;&nbsp;
+<img width="1366" height="768" alt="Screenshot (174)" src="https://github.com/user-attachments/assets/e0e2fdfb-dc30-4701-8e2d-83feeea92279" />
+&nbsp;&nbsp;&nbsp;
+<img width="1366" height="768" alt="Screenshot (175)" src="https://github.com/user-attachments/assets/ece14697-548e-4c06-bc29-0d757165cc46" />
