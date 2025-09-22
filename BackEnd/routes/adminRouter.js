@@ -4,6 +4,7 @@ import {
   logoutAdmin,
   addAdmin,
   getAdmin,
+  refreshAccessToken
 } from "../controllers/adminController.js";
 import { authenticateAdmin, authorizeRoleAdmin } from "../middlewares/auth.js";
 
@@ -14,7 +15,7 @@ adminRouter.post("/addAdmin", addAdmin);
 
 //!This is done
 adminRouter.post("/login", login);
-
+adminRouter.post("/refresh-token" , refreshAccessToken)
 //!This is done
 adminRouter.post(
   "/logout",
