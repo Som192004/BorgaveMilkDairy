@@ -289,6 +289,64 @@ const updateSubAdmin = asyncHandler(async (req, res) => {
     );
 });
 
+const refreshAccessToken = asyncHandler(async (req, res) => {
+    const incomingRefreshToken = req.cookies.refreshToken || req.body.refreshToken
+
+    if (!incomingRefreshToken) {
+        throw new ApiError(401, "unauthorized request")
+    }
+
+    try {
+        const decodedToken = jwt.verify(
+            incomingRefreshToken,
+            process.env.REFRESH_TOKEN_SECRET
+        )
+    
+        const subAdmin = await SubAdmin.findById(decodedToken?._id)
+    
+        if (!subAdmin) {
+            throw new ApiError(401, "Invalid refresh token")
+        }
+    
+        if (incomingRefreshToken !== subAdmin?.refreshToken) {
+            throw new ApiError(401, "Refresh token is expired or used")
+            
+        }
+    
+        const options = {
+            httpOnly: true,
+            secure: true
+        }
+
+            const accessToken = jwt.sign(
+          { _id: subAdmin._id, role: "SubAdmin" },
+          process.env.ACCESS_TOKEN_SECRET,
+          { expiresIn: process.env.ACCESS_TOKEN_EXPIRY }
+        );
+
+          const newRefreshToken = jwt.sign(
+            { _id: subAdmin._id },
+            process.env.REFRESH_TOKEN_SECRET,
+            { expiresIn: process.env.REFRESH_TOKEN_EXPIRY }
+          );
+    
+        return res
+        .status(200)
+        .cookie("accessToken", accessToken, options)
+        .cookie("refreshToken", newRefreshToken, options)
+        .json(
+            new ApiResponse(
+                200, 
+                {accessToken, refreshToken: newRefreshToken},
+                "Access token refreshed"
+            )
+        )
+    } catch (error) {
+        throw new ApiError(401, error?.message || "Invalid refresh token")
+    }
+
+})
+
 export {
   subAdminLogin,
   subAdminLogout,
@@ -297,4 +355,5 @@ export {
   getAllSubAdmins,
   getSubAdminById,
   updateSubAdmin,
+  refreshAccessToken
 };
