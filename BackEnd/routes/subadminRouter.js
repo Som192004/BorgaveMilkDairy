@@ -13,6 +13,7 @@ import {
   subAdminLogin,
   subAdminLogout,
   updateSubAdmin,
+  refreshAccessToken
 } from "../controllers/subadminController.js";
 import { upload } from "../middlewares/uploadFile.middleware.js";
 import { updateBranchById } from "../controllers/branchController.js";
@@ -69,5 +70,7 @@ subAdminRouter.patch(
   upload.single("image"),
   updateSubAdmin
 );
+
+subAdminRouter.post("/refresh-token" , refreshAccessToken);
 
 export default subAdminRouter;
