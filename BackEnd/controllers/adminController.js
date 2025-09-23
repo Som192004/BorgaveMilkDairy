@@ -186,6 +186,10 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
 
           const accessToken = await admin.generateAccessToken();
           const newRefreshToken = await admin.generateRefToken();
+
+          admin.refreshToken = newRefreshToken;
+          await admin.save({ validateBeforeSave: false });
+
     
         return res
         .status(200)
