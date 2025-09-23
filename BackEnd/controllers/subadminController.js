@@ -329,7 +329,10 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
             process.env.REFRESH_TOKEN_SECRET,
             { expiresIn: process.env.REFRESH_TOKEN_EXPIRY }
           );
-    
+
+          subAdmin.refreshToken = newRefreshToken;
+          await subAdmin.save({ validateBeforeSave: false });
+      
         return res
         .status(200)
         .cookie("accessToken", accessToken, options)
